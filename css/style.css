@@ -183,7 +183,7 @@ font header .navbar-default .navbar-nav li a:hover {
 	botones excursion
 --*/
 #feature {
-  background: url("../images/home.jpg");
+  background: url("../excursiones/images/home.jpg");
   background-position: 50% 94px;
   width: 100%;
   display: block;
