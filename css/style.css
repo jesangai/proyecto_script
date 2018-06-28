@@ -57,3 +57,266 @@
     width: 100%;
     height: 700px;
 }
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#btncrear{
+    background-color: coral;
+     padding-right: 50px;
+  padding-left: 50px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+#btnleer{
+        background-color: darkkhaki;
+     padding-right: 50px;
+  padding-left: 50px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Volkhov:400italic);
+/* var text-decoration */
+/*--
+	Common Css
+--*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+}
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+
+h3 {
+  font-size: 28px;
+  font-weight: 300;
+}
+p {
+  font-size: 15px;
+  line-height: 28px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a,
+a:active,
+a:focus,
+a:active {
+  text-decoration: none !important;
+}
+.above:hover {
+	color: tan;
+}
+
+.above {
+	background-color: tan;
+}
+
+.section-title {
+  margin-bottom: 70px;
+}
+.section-title h2 {
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 600;
+}
+.section-title p {
+  font-family: 'Volkhov', serif;
+  font-style: italic;
+  color: #666;
+}
+/*--
+	Header Start 
+--*/
+header {
+  background: #fff;
+  padding: 20px 0;
+}
+header .navbar {
+  margin-bottom: 0px;
+  border: 0px;
+}
+header .navbar-brand {
+  padding-top: 5px;
+}
+header .navbar-default {
+  background: none;
+  border: 0px;
+}
+header .navbar-default .navbar-nav {
+  padding-top: 10px;
+}
+header .navbar-default .navbar-nav li a {
+  color: #333333;
+  padding: 10px 26px;
+  font-size: 15px;
+}
+font header .navbar-default .navbar-nav li a:hover {
+  color: #000;
+}
+
+
+/*--
+	botones excursion
+--*/
+#feature {
+  background: url("../images/home.jpg");
+  background-position: 50% 94px;
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: visible;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #fff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 100px 0;
+}
+#feature h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+#feature p {
+  color: #868686;
+  margin-bottom: 20px;
+}
+#feature .btn-view-works {
+  background: tan;
+  color: #fff;
+  padding: 10px 20px;
+  position: relative;
+  left: 35%;
+}
+
+.block form {
+  padding-bottom: 15px;
+  margin: 0px;
+}
+.block form {
+  background: #F6F8FA;
+  height: 60px;
+  border: 1px solid #EEF2F6;
+  box-shadow: none;
+  width: 100%;
+}
+.block form {
+  padding-bottom: 15px;
+  margin: 0px;
+}
+ .block form {
+  background: #F6F8FA;
+  height: 135px;
+  border: 1px solid #EEF2F6;
+  box-shadow: none;
+  width: 100%;
+}
+.block button {
+  width: 100%;
+  height: 60px;
+  background: #47424C;
+  border: none;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+.block img {
+  width: 100%;
+}
+.block h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #000;
+  font-size: 28px;
+  padding-bottom: 30px;
+}
+.block p {
+  color: #5C5C5C;
+  display: block;
+}
+
+.block ul li {
+  width: 19%;
+  text-align: center;
+  display: inline-block;
+  padding: 40px 0px;
+}
+
+/*--
+	footer Start 
+--*/
+footer {
+  background: #F5F5F5;
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 55px;
+}
+footer p {
+  font-size: 13px;
+  line-height: 25px;
+  color: #919191;
+}
+footer a {
+  color: #595959;
+}
+
+
+/*----BOTONES---*/
+.button{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #1C1C1C;
+    background-color:#E6E6E6;
+    border-radius: 4px;
+  }
+ul.login{
+position: absolute;
+right: 0%;
+top: 1%;
+}
+li.loginu a{
+text-decoration: none;
+color: black;
+}
+li.loginu a:hover{
+text-decoration: none;
+color: tan;
+}
+
+
+
