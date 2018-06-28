@@ -37,7 +37,7 @@
                       <!-- Brand and toggle get grouped for better mobile display -->
                       <div>
                         <a class="navbar-brand" href="../index.html">
-                          <img src="../images/logo.jpg" alt="Logo">
+                          <img src="../excursiones/images/logo.jpg" alt="Logo">
                         </a>
                       </div>
                 </div>
@@ -62,20 +62,25 @@
                                     <div>Portada</div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="container escenas">
-                                    <div>Pagina 1</div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="container escenas">
-                                    <div>Pagina 2</div>
-                                </div>
-                            </div>
                         </div>
                         <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
                         <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
                         <button id="añadirvideo">añadir</button> <br>
+                                  <div class="col-md-4 col-sm-4">
+                                <form enctype="multipart/form-data" class="formularioVideo">
+                                    <input name="archivo" type="file" id="video" />
+                                    <br />
+                                    <br />
+                                    <input type="button" class="añadirvideo" value="añadir" />
+                                    <br />
+                                </form>
+                                <!--div para visualizar mensajes-->
+                                <div class="messagesE"></div>
+                                <br />
+                                <br />
+                                <!--div para visualizar en el caso de imagen-->
+                                <div class="showImage"></div>
+                            </div>
                         <button id="subirvideo">subir</button>
                     </div>
                 </div>
