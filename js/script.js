@@ -1,51 +1,85 @@
 class Usuario{
-    constructor(user, pass, nombre, excursion){
-        this.user=user;
-        this.pass=pass;
-        this.nombre=nombre;
-        this.excursion=excursion;
+    constructor(objres){
+        this.user = objres.user;
+        this.pass = objres.pass;
+        this.nombre = objres.nombre;
+        var excursiones = [];
+        $.each(objres.excursion, function(i, resultado){
+            var objexcursion = new Excursion();    
+                objexcursion.llenarobj(resultado);       
+            excursiones.push(objexcursion);  
+        })
+        
+        this.excursion = excursiones;
     }
-};
+}
+
 
 class Excursion{
-    constructor(titulo, descripcion, creditos, pasos){
-        this.titulo=titulo;
-        this.descripcion=descripcion;
-        this.creditos=creditos;
-        this.pasos=pasos;
+
+    llenarobj(resultado){
+        
+        this.titulo = resultado.titulo;
+        this.descripcion = resultado.descripcion;
+        this.portada = resultado.portada;
+        this.creditos = resultado.creditos;
+         var pasos = [];
+        $.each(resultado.pasos, function(i, respasos){
+            var objpasos = new Pasos();    
+                objpasos.llenarobjpasos(respasos);       
+            pasos.push(objpasos);  
+        })
+        
+        this.pasos = pasos; 
+        
+        
     }
 }
 
 class Pasos{
-    constructor(video, actividad){
-        this.video = video;
-        this.actividad = actividad;
+    
+    llenarobjpasos(respasos){
+        this.video = respasos.video;
+        
+    var objactividad = new Actividad();    
+        objactividad.llenarobjactividad(respasos.actividad);       
+           
+        
+        
+        this.actividad = objactividad; 
     }
+    
 }
 
 class Actividad{
-    constructor(pregunta, imagen1, imagen2, imagen3, imagen4, respuesta){
-        this.pregunta=pregunta;
-        this.imagen1= imagen1;
-        this.imagen2=imagen2;
-        this.imagen3=imagen3;
-        this.imagen4=imagen4;
+    
+    
+      
+    llenarobjactividad(objactividad){
+        this.audio = objactividad.audio;
+        this.imagen1 = objactividad.imagen1;
+        this.imagen2 = objactividad.imagen2;
+        this.imagen3 = objactividad.imagen3;
+        this.imagen4 = objactividad.imagen4;
+        this.respuesta = objactividad.respuesta;
     }
+  
 }
-$('#video').change(function () {
-    //obtenemos un array con los datos del archivo
-    var file = $("#video")[0].files[0];
-    //obtenemos el nombre del archivo
-    var fileName = file.name;
-    //obtenemos la extensión del archivo
-    var fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
-    //obtenemos el tamaño del archivo
-    var fileSize = file.size;
-    //obtenemos el tipo de archivo image/png ejemplo
-    var fileType = file.type;
-    //mensaje con la información del archivo
-    //showMessageE("<span>Archivo para subir: " + fileName + ", peso total: " + fileSize + " bytes.</span>");
-});
+
+//$('#video').change(function () {
+//    //obtenemos un array con los datos del archivo
+//    var file = $("#video")[0].files[0];
+//    //obtenemos el nombre del archivo
+//    var fileName = file.name;
+//    //obtenemos la extensión del archivo
+//    var fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
+//    //obtenemos el tamaño del archivo
+//    var fileSize = file.size;
+//    //obtenemos el tipo de archivo image/png ejemplo
+//    var fileType = file.type;
+//    //mensaje con la información del archivo
+//    //showMessageE("<span>Archivo para subir: " + fileName + ", peso total: " + fileSize + " bytes.</span>");
+//});
 
 $('.añadirvideo').click(function () {
     //información del formulario
@@ -97,6 +131,41 @@ function isImage(extension) {
             return false;
             break;
     }
-}
+};
+
+function leerJson(){
+    var usuarios=[]; 
+    //alert(usuarios);
+    $.getJSON('info.json', function(data){
+        $.each(data, function(i, resultado){
+          usuarios.push(new Usuario(resultado))  
+        //alert("guau");
+        });
+    });
+    
+    return usuarios;
+};
+
+function listarExcursion(){
+    var arrusuarios= [];
+    //arrusuarios=leerJson();
+    //var usuarios=[]; 
+    //alert(usuarios);
+     
+    $.getJSON('info.json', function(data){
+        $.each(data, function(i, resultado){
+          arrusuarios.push(new Usuario(resultado))  
+        //alert("guau");
+            alert("miau"+arrusuarios);
+        });
+    });
+    alert("Miau"+arrusuarios);
+      $.each(arrusuarios[0].excursion, function(i, resultusuarios){
+            $("#listexcursion").append("<div class='col-md-4'><div><button><img src='"+resultusuarios.portada+"'/> <h1>"+resultusuarios.titulo+"</h1><p>"+resultusuarios.descripcion+"</p></button></div></div>");
+        });
+    
+};
+
+
 
 
