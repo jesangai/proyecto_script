@@ -4,16 +4,17 @@
       {
         "titulo": "naturaleza",
         "descripcion": "somos felices viendo la naturaleza",
+        "portada" :"..\/excursiones\/images\/ardilla.jpeg",
         "creditos": "elaborado por jessica",
         "pasos": [{
-            "video": "",
+            "video": "..\/excursiones\/images\/ardilla.jpeg",
             "actividad": {
-                "audio": "",
-                "imagen1":"",
-                "imagen2":"",
-                "imagen3":"",
-                "imagen4":"",
-                "respuesta": ""
+                "audio": "..\/excursiones\/images\/ardilla.jpeg",
+                "imagen1":"..\/excursiones\/images\/ardilla.jpeg",
+                "imagen2":"..\/excursiones\/images\/ardilla.jpeg",
+                "imagen3":"..\/excursiones\/images\/ardilla.jpeg",
+                "imagen4":"..\/excursiones\/images\/ardilla.jpeg",
+                "respuesta": "1"
             }
         }]
         
