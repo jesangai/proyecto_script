@@ -16,8 +16,11 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
     {
        sleep(1);//retrasamos la petición 3 segundos
        echo $file;//devolvemos el nombre del archivo para pintar la imagen
+    }else{
+        echo $path;
     }
 }else{
+    echo "iau";
     throw new Exception("Error Processing Request", 1);   
 }
 ?>

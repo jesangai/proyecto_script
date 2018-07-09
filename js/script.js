@@ -65,21 +65,21 @@ class Actividad{
     }
   
 }
-
-//$('#video').change(function () {
-//    //obtenemos un array con los datos del archivo
-//    var file = $("#video")[0].files[0];
-//    //obtenemos el nombre del archivo
-//    var fileName = file.name;
-//    //obtenemos la extensión del archivo
-//    var fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
-//    //obtenemos el tamaño del archivo
-//    var fileSize = file.size;
-//    //obtenemos el tipo de archivo image/png ejemplo
-//    var fileType = file.type;
-//    //mensaje con la información del archivo
-//    //showMessageE("<span>Archivo para subir: " + fileName + ", peso total: " + fileSize + " bytes.</span>");
-//});
+ var fileExtension;
+$('#video').change(function () {
+    //obtenemos un array con los datos del archivo
+    var file = $("#video")[0].files[0];
+    //obtenemos el nombre del archivo
+    var fileName = file.name;
+    //obtenemos la extensión del archivo
+    fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
+    //obtenemos el tamaño del archivo
+    var fileSize = file.size;
+    //obtenemos el tipo de archivo image/png ejemplo
+    var fileType = file.type;
+    //mensaje con la información del archivo
+    //showMessageE("<span>Archivo para subir: " + fileName + ", peso total: " + fileSize + " bytes.</span>");
+});
 
 $('.añadirvideo').click(function () {
     //información del formulario
@@ -101,14 +101,16 @@ $('.añadirvideo').click(function () {
             // message = $("<span>La imagen ha subido correctamente.</span>");
             //showMessageE(message);
             alert(data);
+            console.log(data);
             if (isImage(fileExtension)) {
-                $(".escenas").html("<p>miau</p>")}
+                $(".escenas").html("<p>hh</p>")}
         },
         //si ha ocurrido un error
-        error: function () {
+        error: function (data) {
             alert("error");
             // message = $("<span>Ha ocurrido un error.</span>");
             //showMessageE(message);<video><source src='../excursiones/videos/'" + data + "' type='video/mp4'/></video>
+            console.log(data);
         }
     });
 });
