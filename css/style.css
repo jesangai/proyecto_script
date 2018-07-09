@@ -1,3 +1,9 @@
+.paso, .portada{
+    background-color: aquamarine; width: 200px; height: 200px; margin: 10px;
+}
+#portada{
+    width: 300px
+}
 #jquery-script-menu {
     position: fixed;
     height: 90px;
