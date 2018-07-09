@@ -21,4 +21,28 @@
       }
       
     ]
+},
+{
+    
+    "user": "jesangai", "pass": "1234", "nombre": "jessica" , "excursion":[
+      {
+        "titulo": "naturaleza",
+        "descripcion": "somos felices viendo la naturaleza",
+        "portada" :"..\/excursiones\/images\/ardilla.jpeg",
+        "creditos": "elaborado por jessica",
+        "pasos": [{
+            "video": "..\/excursiones\/images\/ardilla.jpeg",
+            "actividad": {
+                "audio": "..\/excursiones\/images\/ardilla.jpeg",
+                "imagen1":"..\/excursiones\/images\/ardilla.jpeg",
+                "imagen2":"..\/excursiones\/images\/ardilla.jpeg",
+                "imagen3":"..\/excursiones\/images\/ardilla.jpeg",
+                "imagen4":"..\/excursiones\/images\/ardilla.jpeg",
+                "respuesta": "1"
+            }
+        }]
+        
+      }
+      
+    ]
 }]
