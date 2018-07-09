@@ -36,6 +36,7 @@
                         <a class="navbar-brand" href="../index.html">
                           <img src="../excursiones/images/logo.jpg" alt="Logo">
                         </a>
+                        <button id="guardarEx">Guardar</button>
                       </div>
                 </div>
                 </nav>
@@ -44,49 +45,65 @@
           </div>
         </header><!-- header close -->
 
-
+        
      
-        <section id="slider">
           <div class="container">
             <div class="row">
-              <div class="col-md-10 col-md-offset-2">
-                <div class="block">
-                  <h1>Añadir Video </h1> <br> <br> <br> 
-                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="container escenas">
-                                    <div>Portada</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                        <button id="añadirvideo">añadir</button> <br>
-                                  <div class="col-md-4 col-sm-4">
-                                <form enctype="multipart/form-data" class="formularioVideo">
-                                    <input name="archivo" type="file" id="video" />
-                                    <br />
-                                    <br />
-                                    <input type="button" class="añadirvideo" value="añadir" />
-                                    <br />
-                                </form>
-                                <!--div para visualizar mensajes-->
-                                <div class="messagesE"></div>
-                                <br />
-                                <br />
-                                <!--div para visualizar en el caso de imagen-->
-                                <div class="showImage"></div>
-                            </div>
-                        <button id="subirvideo">subir</button>
-                    </div>
+                <div class="col-md-12 col-sm-12">
+                    <label for="">Titulo</label><input id="titulo" type="text" placeholder="Titulo" value="">
                 </div>
-              </div>
-            </div>
-          </div>
-    </section>
+                <div class="col-md-12 col-sm-12">
+                    <label for="">Descripcion</label><input id="descripcion" type="text" value="">
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <label for="">Creditos</label><input id="creditos" type="text" value="">
 
-      
+                </div>
+            </div>
+            <div class="row">
+                <div id="divPortada" class="portada col-md-4 col-sm-4">PORTADA</div>
+                <div class="col-md-4 col-sm-4">
+                    <form enctype="multipart/form-data" class="formularioPortada">
+                        <input name="archivo" type="file" id="imgPortada" />
+                        <br />
+                        <br />
+                        <input type="button" class="añadirPortada" value="Añadir" />
+                        <br />
+                    </form>
+                    <!--div para visualizar mensajes-->
+                    <div class="messagesE"></div>
+                    <br />
+                    <br />
+                    <!--div para visualizar en el caso de imagen-->
+                    <div class="showImage"></div>
+                </div>
+            </div>
+            
+            <h1>Añadir Video </h1> <br> <br> <br> 
+            <div id="escenas">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 paso" id="div1"></div>
+                    <div class="col-md-4 col-sm-4">
+                        <form enctype="multipart/form-data" class="formularioVideov1">
+                            <input name="archivo" type="file" id="video" />
+                            <br />
+                            <br />
+                            <input type="button" class="añadirvideo" value="añadir" id="v1" onclick="subirVideo(this)"/>
+                            <br />
+                        </form>
+                        <!--div para visualizar mensajes-->
+                        <div class="messagesE"></div>
+                        <br />
+                        <br />
+                        <!--div para visualizar en el caso de imagen-->
+                        <div class="showImage"></div>
+                    </div>
+                </div>  
+            </div>
+            <button id="nuevoVideo">+</button>
+            <br>
+            
+         </div>      
         <!-- section Start -->
           <section id="feature">
         <div class="container">
