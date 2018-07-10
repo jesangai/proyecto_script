@@ -7,6 +7,9 @@
 #portada{
     width: 300px
 }
+
+
+.listaimg{width: 350px;}
 .fondoImg{background-color: blueviolet;width: 200px;height: 200px}
 .imgPregunta{width: 180px;height: 180px}
 .styleVideo{width: 180px;height: 180px}

@@ -73,16 +73,14 @@ class Actividad{
         this.imagen1 = objactividad.imagen1;
         this.imagen2 = objactividad.imagen2;
         this.imagen3 = objactividad.imagen3;
-        this.imagen4 = objactividad.imagen4;
         this.respuesta = objactividad.respuesta;
     }
-    llenarattractividad(audio,imagen1,imagen2,imagen3,imagen4,respuesta){
-        this.audio = objactividad.audio;
-        this.imagen1 = objactividad.imagen1;
-        this.imagen2 = objactividad.imagen2;
-        this.imagen3 = objactividad.imagen3;
-        this.imagen4 = objactividad.imagen4;
-        this.respuesta = objactividad.respuesta;
+    llenarattractividad(audio,imagen1,imagen2,imagen3,respuesta){
+        this.audio = audio;
+        this.imagen1 = imagen1;
+        this.imagen2 = imagen2;
+        this.imagen3 = imagen3;
+        this.respuesta = respuesta;
     }
   
 }
@@ -261,11 +259,56 @@ function listarExcursion(){
         });
          
         $.each(arrusuarios[0].excursion, function(i, resultusuarios){
-            $("#listexcursion").append("<div class='col-md-4'><div><button><img src='"+resultusuarios.portada+"'/> <h1>"+resultusuarios.titulo+"</h1><p>"+resultusuarios.descripcion+"</p></button></div></div>");
+            $("#listexcursion").append("<div class='col-md-4 col-sm-4'><div><button onclick='pasar(this)'><img class='listaimg' src='"+resultusuarios.portada+"'/> <h1>"+resultusuarios.titulo+"</h1><p>"+resultusuarios.descripcion+"</p></button></div></div>");
         });
     });
 };
 
+function recibirExcursion(){
+    var tituloExcursion=localStorage.getItem("varPasar");
+    //alert(tituloExcursion);
+    var arrusuarios= [];
+   
+    $.getJSON('info.json', function(data){
+        $.each(data, function(i, resultado){
+          arrusuarios.push(new Usuario(resultado))
+        });
+        $.each(arrusuarios[0].excursion, function(i, resExc){
+            if(resExc.titulo==tituloExcursion){
+               //manejo todoo
+                $("#tituloLeer").html(resExc.titulo);
+                $("#descripcionLeer").html(resExc.descripcion);
+                $("#creditosLeer").html(resExc.creditos);
+                $("#portadaLeer").attr("src",resExc.portada);
+                $.each(resExc.pasos, function(i, resPaso){
+                    $("#pasos").append("<div class='col-md-6 col-sm-6'><img class='listaimg' src='"+resPaso.video+"'></div>");
+                    $("#actividades").append("<div class='col-md-6 col-sm-6'><audio controls><source src='"+resPaso.actividad.audio+"' type='audio/mp3' ></audio><br/><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img1' src='"+resPaso.actividad.imagen1+"' class='listaimg'></button><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img2' src='"+resPaso.actividad.imagen2+"' class='listaimg'></button><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img3' class='listaimg'src='"+resPaso.actividad.imagen3+"'></button></div>");
+                });
+                
+            }
+        });
+    });
+}
+
+function validarRespuesta(btn, respuesta){
+    //alert(btn.firstChild.getAttribute("id"));
+    if(btn.firstChild.getAttribute("id")=="img"+respuesta){
+       alert("acertaste");
+        console.log($('#btnOpcion'))
+        $('.btnOpcion')[0].disabled=true;
+        $('.btnOpcion')[1].disabled=true;
+        $('.btnOpcion')[2].disabled=true;
+    }else{
+       alert("Respuesta incorrecta, elije la numero "+respuesta);
+    }
+}
+function pasar(btn){
+//    alert(btn.childNodes[2].innerHTML);
+//    console.log(btn.childNodes[2].innerHTML);
+    var excursionElegida=btn.childNodes[2].innerHTML;
+    localStorage.setItem("varPasar",excursionElegida);
+    window.location = "excursion.html";
+}
 var cantVideos=1;
 var cantOpciones=3;
 $('#guardarEx').click(function () {
@@ -275,55 +318,50 @@ $('#guardarEx').click(function () {
         $.each(data, function(i, resultado){
           arrusuarios.push(new Usuario(resultado))
         });
-        var actTmp= new Actividad();
-        var pasosTmp= new Pasos();
-        var exTmp= new Excursion();
-        
-        //alert($("#portada").attr('src'));
-       actTmp.llenarattractividad(null,null,null,null,null,null);
-       pasosTmp.llenarattrpasos(("#portada").attr('src'),actTmp); exTmp.llenarattr($("#titulo").val(),$("#descripcion").val(),$("#creditos").val(),$("#portada").attr('src'),pasosTmp);
-        
-    });
-    
+        var errores=validarDatos();
+        //if(errores==0){
+            var pasos=[];
+            var cantOpciones=0;
+            $.each($('.contAudio'), function(i, resAudio){
+                //alert(i);
+                  var actTmp= new Actividad();
+                  var audio=resAudio.firstElementChild.firstChild.firstChild.getAttribute("src");
+                  var img1=$('.contPrg').children()[cantOpciones].firstElementChild.firstChild.getAttribute("src");
+                  var img2=$('.contPrg').children()[cantOpciones+1].firstElementChild.firstChild.getAttribute("src");
+                  var img3=$('.contPrg').children()[cantOpciones+2].firstElementChild.firstChild.getAttribute("src");
+                  cantOpciones=cantOpciones+3;
+                  var res= $('.respuesta')[i].value;
+                  actTmp.llenarattractividad(audio,img1,img2,img3,res);
+                  
+                  var video=$('#escenas').children()[i].firstElementChild.firstChild.getAttribute("src");
+                  
+                  var paso=new Pasos();
+                  paso.llenarattrpasos(video,actTmp);
+                  pasos.push(paso);
+                  
+            });
+            var excursion= new Excursion();
+            excursion.llenarattr($("#titulo").val(),$("#descripcion").val(),$("#creditos").val(),$("#portada").attr('src'),pasos);
+            
+            arrusuarios[0].excursion.push(excursion);
+            console.log(arrusuarios);
+            $.ajax({
+                url: 'guardarJson.php',
+                method: 'post',
+                data: {
+                    "identificador": arrusuarios
+                },
+                success: function (data) {
+                    alert(data);
+                    //alert("au: "+usuarios.length);
+                }
+            });
+        //window.location.href
+        });
 });
 $('#nuevoVideo').click(function () {
-    //alert($('#escenas').children().length);
-    var errores=0;
-    $.each($('#escenas').children(), function(i, resultado){
-//        alert(resultado.firstElementChild.childNodes);
-//        console.log(resultado.firstElementChild.childNodes);
-          if(resultado.firstElementChild.childNodes.length==1){
-             //console.log(resultado.childNodes.find(item));
-          }else{
-              errores++;
-              alert("No has agregado un video!");
-          }
-    });
-    $.each($('.contAudio'), function(i, resAudio){
-          if(resAudio.firstElementChild.childNodes.length==1){
-             console.log("lleno");
-          }else{
-              errores++;
-              alert("No has agregado un audio de pregunta!");
-          }
-    });
-    $.each($('.contPrg').children(), function(i, resPrg){
-          if(resPrg.firstElementChild.childNodes.length==1){
-             console.log("lleno");
-          }else{
-              errores++;
-              alert("No has agregado una opcion de la actividad!");
-          }
-    });
-    $.each($('.respuesta'), function(i, respuesta){
-        if(respuesta.value!=""){
-             console.log("lleno");
-        }else{
-              errores++;
-              alert("No has agregado una respuesta!");
-        }
-          
-    });
+    var errores=validarDatos();
+    //alert("nv"+errores);
     if(errores==0){
         if(cantVideos!=5){
             cantVideos++;
@@ -394,6 +432,53 @@ $('#nuevoVideo').click(function () {
         cantOpciones=cantOpciones+3;
     }
 });
+function validarDatos() {
+    //alert($('#escenas').children().length);
+    var errores=0;
+    $.each($('#escenas').children(), function(i, resultado){
+//        alert(resultado.firstElementChild.childNodes);
+//        console.log(resultado.firstElementChild.childNodes);
+          if(resultado.firstElementChild.childNodes.length==1){
+             //console.log(resultado.childNodes.find(item));
+          }else{
+              errores++;
+              //alert("No has agregado un video!");
+          }
+    });
+    $.each($('.contAudio'), function(i, resAudio){
+          if(resAudio.firstElementChild.childNodes.length==1){
+             console.log("lleno");
+          }else{
+              errores++;
+              //alert("No has agregado un audio de pregunta!");
+          }
+    });
+    $.each($('.contPrg').children(), function(i, resPrg){
+          if(resPrg.firstElementChild.childNodes.length==1){
+             console.log("lleno");
+          }else{
+              errores++;
+              //alert("No has agregado una opcion de la actividad!");
+          }
+    });
+    $.each($('.respuesta'), function(i, respuesta){
+        if(respuesta.value!=""){
+            
+            if(respuesta.value>=1 && respuesta.value<=3){
+                //alert("Respuesta correcta!");
+            }else{
+              errores++;
+              //alert("Respuesta incorrecta!");
+            }
+             //console.log("lleno");
+        }else{
+              errores++;
+              //alert("No has agregado una respuesta!");
+        }
+          
+    });
+    return errores;
+};
 $('#exportar').click(function () {
     var arrusuarios= [];
     
