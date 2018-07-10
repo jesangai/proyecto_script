@@ -1,9 +1,15 @@
+#imgLogo{
+   width: 100px 
+}
 .paso, .portada{
     background-color: aquamarine; width: 200px; height: 200px; margin: 10px;
 }
 #portada{
     width: 300px
 }
+.fondoImg{background-color: blueviolet;width: 200px;height: 200px}
+.imgPregunta{width: 180px;height: 180px}
+.styleVideo{width: 180px;height: 180px}
 #jquery-script-menu {
     position: fixed;
     height: 90px;
@@ -11,7 +17,7 @@
     top: 0;
     left: 0;
     border-top: 5px solid #316594;
-    background: #fff;
+    background-color: aquamarine;
     -moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
     -webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
     box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
@@ -74,16 +80,17 @@
 
 #btncrear{
     background-color: coral;
-     padding-right: 50px;
-  padding-left: 50px;
-    padding-bottom: 50px;
-    padding-top: 50px;
 }
 
 #btnleer{
-        background-color: darkkhaki;
-     padding-right: 50px;
-  padding-left: 50px;
+    background-color: darkkhaki;
+}
+
+#btncrear, #btnleer{
+    font-size: 25px;
+    width: 200px;
+    padding-right: 50px;
+    padding-left: 50px;
     padding-bottom: 50px;
     padding-top: 50px;
 }
@@ -158,7 +165,7 @@ a:active {
 	Header Start 
 --*/
 header {
-  background: #fff;
+  background-color: azure;
   padding: 20px 0;
 }
 header .navbar {
@@ -189,9 +196,10 @@ font header .navbar-default .navbar-nav li a:hover {
 	botones excursion
 --*/
 #feature {
-  background: url("../excursiones/images/home.jpg");
+  background: url("../images/home.jpg");
   background-position: 50% 94px;
   width: 100%;
+  height: 400px;
   display: block;
   position: relative;
   overflow: visible;
@@ -221,7 +229,7 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 #feature .btn-view-works {
   background: tan;
-  color: #fff;
+  color: azure;
   padding: 10px 20px;
   position: relative;
   left: 35%;
@@ -285,15 +293,16 @@ font header .navbar-default .navbar-nav li a:hover {
 	footer Start 
 --*/
 footer {
-  background: #F5F5F5;
+  background-color:coral;
   text-align: center;
-  padding-top: 48px;
-  padding-bottom: 55px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  height: 80px;
 }
 footer p {
-  font-size: 13px;
+  font-size: 20px;
   line-height: 25px;
-  color: #919191;
+  color: white;
 }
 footer a {
   color: #595959;
@@ -305,7 +314,7 @@ footer a {
     text-decoration: none;
     padding: 10px;
     font-weight: 300;
-    font-size: 15px;
+    font-size: 25px;
     color: #1C1C1C;
     background-color:#E6E6E6;
     border-radius: 4px;
