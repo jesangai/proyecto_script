@@ -1,4 +1,4 @@
-<doctype html!>
+<!DOCTYPE html>
 <html>
     <head>
        
@@ -7,11 +7,32 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link href="../css/bootstrap.min.css" rel="stylesheet" >
-    <link rel="stylesheet" ref="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
     </head>
     <body onload="listarExcursion()">
-        hokaaa
+        <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- header Nav Start -->
+              <nav >
+                <div class="container-fluid row">
+                      <!-- Brand and toggle get grouped for better mobile display -->
+                      <div class="col-md-4 col-sm-4">
+                        <a class="navbar-brand" href="../index.html">
+                          <img id="imgLogo" src="../images/logo.jpg" alt="Logo">
+                        </a>
+                      </div>
+                      <div class="col-md-4 col-sm-4"> 
+                          <a id="exportar" href="#">Exportar JSON</a>
+                      </div>
+                </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </header><!-- header close -->
+        
         <div class="contaniner" id="listexcursion">
             <div class="row">
                 
@@ -19,9 +40,7 @@
         </div>
    
     
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../js/script.js"></script>
     
     </body>
