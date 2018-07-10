@@ -25,12 +25,15 @@
             <div class="col-md-12">
               <!-- header Nav Start -->
               <nav >
-                <div class="container-fluid">
+                <div class="container-fluid row">
                       <!-- Brand and toggle get grouped for better mobile display -->
-                      <div>
+                      <div class="col-md-4 col-sm-4">
                         <a class="navbar-brand" href="index.html">
-                          <img src="excursiones/images/logo.jpg" alt="Logo">
+                          <img id="imgLogo" src="images/logo.jpg" alt="Logo">
                         </a>
+                      </div>
+                      <div class="col-md-4 col-sm-4"> 
+                          <a id="exportar" href="#">Exportar JSON</a>
                       </div>
                 </div>
                 </nav>
@@ -44,8 +47,11 @@
           <section id="feature">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 col-md-offset-6" >
+            <div class="col-md-6 col-sm-6" >
                 <a href="pages/crearexcursion.html"><button id="btncrear">crear excursion</button></a>
+                
+            </div>
+            <div class="col-md-6 col-sm-6" >    
                 <a href="pages/leerexcursion.html"> <button id="btnleer">leer excursion</button></a>
 
             </div>
@@ -64,8 +70,11 @@
             </div>
         </footer>        
            
-      
+       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="js/script.js"></script>
+      
+        <script src="js/bootstrap.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
     </body>
 </html>
