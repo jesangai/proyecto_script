@@ -4,7 +4,7 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
 {
     //obtenemos el archivo a subir
     $file = $_FILES['archivo']['name'];
-    $path="../excursiones/videos/";
+    $path="../excursiones/";
     //comprobamos si existe un directorio para subir el archivo
     //si no es así, lo creamos
     if(!is_dir($path))
