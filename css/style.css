@@ -5,8 +5,8 @@
 }
 
 #logo{
-   position:absolute;
-   top:2em;
+   position:relative;
+   top:1em;
    left:2em;
 }
 
@@ -15,7 +15,7 @@
    position:absolute;
    top:2em;
    right: -36em;
-   color: white;
+   color: black;
 }
   
 .paso, .portada{
@@ -90,13 +90,8 @@
     height: 700px;
 }
 
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-top:15px;
-  margin-right: auto;
-  margin-left: auto;
+.container{
+ 
 }
 
 #btncrear{
@@ -109,10 +104,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
-   
 }
 
 
@@ -129,21 +121,20 @@
     background-color:white;
     border-radius: 8px;
     color: black;;
-    border: 2px solid #008CBA; /* Green */
+    border: 2px solid #99d2ef; /* Green */
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
 }
 
 #btnleer:hover {
-    background-color:#008CBA; /* Green */
+    background-color:#99d2ef; /* Green */
     color: white;
 }
 
-#btncrear, #btnleer{
+#btncrear, #btnleer, #btnExportar{
     font-size:20px;
     width:200px;
     margin:auto;
@@ -153,6 +144,29 @@
     padding-top: 50px;
 }
 
+#btnExportar{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color:white;
+    border-radius: 8px;
+    color: black;;
+    border: 2px solid #f1a3a3; /* Green */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#btnExportar:hover {
+    background-color:#f1a3a3; /* Green */
+    color: white;
+}
+
+
+
+btnExportar
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 @import url(http://fonts.googleapis.com/css?family=Volkhov:400italic);
@@ -161,12 +175,13 @@
 	Common Css
 --*/
 body {
-  font-family: 'Open Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  display: block;
- width:auto;
- height:auto;
-overflow: auto;
+font-family: 'Open Sans', sans-serif;
+-webkit-font-smoothing: antialiased;
+display: block;
+overflow: hidden;
+width: 100%; /* Set width to 100% */
+min-height: 200px;
+max-height: 300px;
 }
 
 h1,
@@ -228,8 +243,14 @@ a:active {
 --*/
 header {
   background-color: azure;
-  padding: 20px 0;
+ /*-- background-image: url("../images/fondo.jpg");--*/
+  background-position: 50% 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding:20px 0px 40px 0px;
 }
+
 header .navbar {
   margin-bottom: 0px;
   border: 0px;
@@ -258,10 +279,20 @@ font header .navbar-default .navbar-nav li a:hover {
 	botones excursion
 --*/
 #feature {
-  padding:50px 50px 50px 50px;
-  position:relative;
-  left:15em;
-  right:15em;
+  background-image: url("../images/fondo3.jpg");
+  background-repeat: no-repeat, repeat;
+  background-size: auto;
+  background-position: 50% 50%;
+  overflow: visible;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding:300px 300px 100px 300px;
   
 }
 
@@ -328,7 +359,7 @@ font header .navbar-default .navbar-nav li a:hover {
   border: none;
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-size:18px;
 
 }
 
@@ -358,16 +389,18 @@ font header .navbar-default .navbar-nav li a:hover {
 	footer Start 
 --*/
 footer {
-  background-color:#d1452c;
+  
   text-align: center;
-  padding-top: 30px;
+  padding-top:50px;
   padding-bottom: 10px;
   height: 80px;
+  
 }
+
 footer p {
-  font-size: 20px;
-  line-height: 25px;
-  color: white;
+  font-size:16px;
+  line-height:20px;
+  color:#22765e;
 }
 footer a {
   color: #595959;
