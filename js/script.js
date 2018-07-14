@@ -153,8 +153,8 @@ function subirVideo(btnV){
         processData: false,
         success: function (data) {
             if (isImage(fileExtensionV)) {
-                $("#di"+valor).html("<img  class='imgPregunta' id='videoExcursion' src='../excursiones/"+data+"'></img>")}
-//            $("#di"+valor).html("<video class='styleVideo' control><source src='../excursiones/"+data+"' type='video/mp4'></video>")}
+                //$("#di"+valor).html("<img  class='imgPregunta' id='videoExcursion' src='../excursiones/"+data+"'></img>")}
+                $("#di"+valor).html("<video id='videoExcursion' class='styleVideo' control><source src='../excursiones/"+data+"' type='video/mp4'></video>")}
         }
     });
 };
@@ -281,7 +281,7 @@ function recibirExcursion(){
                 $("#creditosLeer").html(resExc.creditos);
                 $("#portadaLeer").attr("src",resExc.portada);
                 $.each(resExc.pasos, function(i, resPaso){
-                    $("#pasos").append("<div class='col-md-6 col-sm-6'><img class='listaimg' src='"+resPaso.video+"'></div>");
+                    $("#pasos").append("<div class='col-md-6 col-sm-6'><video class='listaimg'><source src='"+resPaso.video+"'></video></div>");
                     $("#actividades").append("<div class='col-md-6 col-sm-6'><audio controls><source src='"+resPaso.actividad.audio+"' type='audio/mp3' ></audio><br/><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img1' src='"+resPaso.actividad.imagen1+"' class='listaimg'></button><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img2' src='"+resPaso.actividad.imagen2+"' class='listaimg'></button><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img3' class='listaimg'src='"+resPaso.actividad.imagen3+"'></button></div>");
                 });
                 
@@ -319,7 +319,7 @@ $('#guardarEx').click(function () {
           arrusuarios.push(new Usuario(resultado))
         });
         var errores=validarDatos();
-        //if(errores==0){
+        if(errores==0){
             var pasos=[];
             var cantOpciones=0;
             $.each($('.contAudio'), function(i, resAudio){
@@ -333,7 +333,7 @@ $('#guardarEx').click(function () {
                   var res= $('.respuesta')[i].value;
                   actTmp.llenarattractividad(audio,img1,img2,img3,res);
                   
-                  var video=$('#escenas').children()[i].firstElementChild.firstChild.getAttribute("src");
+                  var video=$('#escenas').children()[i].firstElementChild.firstChild.firstChild.getAttribute("src");
                   
                   var paso=new Pasos();
                   paso.llenarattrpasos(video,actTmp);
@@ -352,10 +352,14 @@ $('#guardarEx').click(function () {
                     "identificador": arrusuarios
                 },
                 success: function (data) {
-                    alert(data);
+                    //alert(data);
                     //alert("au: "+usuarios.length);
+                    window.location.href="../index.html";
                 }
             });
+        }else{
+            alert("Llene todos los campos!");
+        }
         //window.location.href
         });
 });
@@ -482,12 +486,10 @@ function validarDatos() {
 
 function cargarIndex(){
     var arrusuarios= [];
-    
     $.getJSON('pages/info.json', function(data){
         
         $.each(data, function(i, resultado){
           arrusuarios.push(new Usuario(resultado));
-            
          });
         
         var data= "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(arrusuarios));
@@ -497,20 +499,3 @@ function cargarIndex(){
     });
     
 };
-//$('#btnExportar').click(function () {
-//    var arrusuarios= [];
-//    
-//    $.getJSON('pages/info.json', function(data){
-//        
-//        $.each(data, function(i, resultado){
-//          arrusuarios.push(new Usuario(resultado))
-//        });
-//        
-//        var data= "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(arrusuarios));
-//        //alert(data);
-//        $("#btnExportar").attr("href","data:"+data);
-//        $("#btnExportar").attr("download","info.json");
-//        //$("#btnExportar").trigger("click");
-//    });
-//    
-//});
