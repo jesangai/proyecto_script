@@ -479,20 +479,38 @@ function validarDatos() {
     });
     return errores;
 };
-$('#exportar').click(function () {
+
+function cargarIndex(){
     var arrusuarios= [];
     
     $.getJSON('pages/info.json', function(data){
         
         $.each(data, function(i, resultado){
-          arrusuarios.push(new Usuario(resultado))
-        });
+          arrusuarios.push(new Usuario(resultado));
+            
+         });
         
         var data= "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(arrusuarios));
         //alert(data);
-        $("#exportar").attr("href","data:"+data);
-        $("#exportar").attr("download","info.json");
-        $("#exportar").trigger("click");
+        $("#btnExportar").attr("href","data:"+data);
+        $("#btnExportar").attr("download","info.json");
     });
     
-});
+};
+//$('#btnExportar').click(function () {
+//    var arrusuarios= [];
+//    
+//    $.getJSON('pages/info.json', function(data){
+//        
+//        $.each(data, function(i, resultado){
+//          arrusuarios.push(new Usuario(resultado))
+//        });
+//        
+//        var data= "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(arrusuarios));
+//        //alert(data);
+//        $("#btnExportar").attr("href","data:"+data);
+//        $("#btnExportar").attr("download","info.json");
+//        //$("#btnExportar").trigger("click");
+//    });
+//    
+//});
