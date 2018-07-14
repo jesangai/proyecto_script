@@ -293,13 +293,15 @@ function recibirExcursion(){
 function validarRespuesta(btn, respuesta){
     //alert(btn.firstChild.getAttribute("id"));
     if(btn.firstChild.getAttribute("id")=="img"+respuesta){
-       alert("acertaste");
-        console.log($('#btnOpcion'))
-        $('.btnOpcion')[0].disabled=true;
-        $('.btnOpcion')[1].disabled=true;
-        $('.btnOpcion')[2].disabled=true;
+       $("#divAudios").html("<audio id='correcta' controls autoplay><source src='../images/bambi1.mp3' type='audio/mp3'></audio>");
+        //console.log($('#btnOpcion'))
+//        $('.btnOpcion')[0].disabled=true;
+//        $('.btnOpcion')[1].disabled=true;
+//        $('.btnOpcion')[2].disabled=true;
     }else{
-       alert("Respuesta incorrecta, elije la numero "+respuesta);
+       //alert("Respuesta incorrecta, elije la numero "+respuesta);
+        $("#divAudios").html("<audio id='incorrecta' controls autoplay><source src='../images/bambi1.mp3' type='audio/mp3' ></audio>");
+        
     }
 }
 function pasar(btn){
