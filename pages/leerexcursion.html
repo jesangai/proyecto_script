@@ -1,47 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-       
-            <!-- CSS -->
+    <head>            <!-- CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link href="../css/bootstrap.min.css" rel="stylesheet" >
-    
     </head>
-    <body onload="listarExcursion()">
-        <header>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <!-- header Nav Start -->
-              <nav >
-                <div class="container-fluid row">
-                      <!-- Brand and toggle get grouped for better mobile display -->
-                      <div class="col-md-4 col-sm-4">
-                        <a class="navbar-brand" href="../index.html">
-                          <img id="imgLogo" src="../images/logo.jpg" alt="Logo">
-                        </a>
-                      </div>
-                      <div class="col-md-4 col-sm-4"> 
-                          <a id="exportar" href="#">Exportar JSON</a>
-                      </div>
-                </div>
-                </nav>
+    
+<body onload="listarExcursion()">
+  
+<div class="container">
+  <div class="jumbotron">
+      <div class="col-md-6 col-sm-6">
+       <a href="../index.html">
+       <img id="imgLogo" src="../images/logo1.png" alt="Logo">
+       </a>
+      </div>     
+  </div>
+ <div class="contenedor">       
+  <div class="row" id="listexcursion"></div>
+ </div> 
+</div>
+
+        <footer>
+            <div class="row">
+              <div class="col-md-12">
+            <p>©Todos los derechos reservados.Gaibor-Chalen-Tohabanda 2018</p>
               </div>
             </div>
-          </div>
-        </header><!-- header close -->
-        
-        <div class="contaniner" >
-            <div class="row" id="listexcursion"> 
-                
-            </div>
-        </div>
-   
+        </footer>        
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="../js/script.js"></script>
-    
     </body>
+    
 </html>

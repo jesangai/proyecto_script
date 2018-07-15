@@ -9,25 +9,38 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body onload="recibirExcursion()">
-    
-    <div class="container">
-        <h1 id="tituloLeer"></h1>
-        <h2 id="descripcionLeer"></h2>
-        <h3 id="creditosLeer"></h3>
+
+<div class="container">
+  <div class="jumbotron">
+      <div class="col-md-6 col-sm-6">
+       <a href="../index.html">
+       <img id="imgLogo" src="../images/logo1.png" alt="Logo">
+       </a>
+      </div>     
+  </div>
+ <div class="contenedor">
+        <h1 id="tituloLeer">Título</h1>
+        <h2 id="descripcionLeer">Descripción</h2>
+        <h3 id="creditosLeer">Créditos</h3>
         <div>
-            <img class="listaimg" id="portadaLeer" alt="" src="">
+          <img class="listaimg" id="portadaLeer" alt="" src="">
         </div>
         
-        <h1>PASOS</h1>
-        <div id="pasos" class="row">
-            
-        </div>
+        <h1>Pasos</h1>
+        <div id="pasos" class="row"></div>
         
-        <h1>ACTIVIDAD</h1>
-        <div id="actividades" class="row">
-            
+        <h1>Actividad</h1><div id="actividades" class="row">
         </div>
+  </div>
     </div>
+    
+       <footer>
+            <div class="row">
+              <div class="col-md-12">
+            <p>©Todos los derechos reservados.Gaibor-Chalen-Tohabanda 2018</p>
+              </div>
+            </div>
+        </footer>        
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="../js/script.js"></script>
