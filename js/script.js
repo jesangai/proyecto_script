@@ -276,7 +276,7 @@ function recibirExcursion(){
         $.each(arrusuarios[0].excursion, function(i, resExc){
             if(resExc.titulo==tituloExcursion){
                //manejo todoo
-                alert(resExc.titulo);
+                //alert(resExc.titulo);
                 $("#tituloLeer").html(resExc.titulo);
                 $("#descripcionLeer").html(resExc.descripcion);
                 $("#creditosLeer").html(resExc.creditos);
