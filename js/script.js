@@ -384,7 +384,7 @@ $('#nuevoVideo').click(function () {
                             <div class='col-md-12 col-md-offset-12'>\
                         <h2>PLANEA TU ACTIVIDAD</h2>\
                         <div class='row'>\
-                          <div class='col-md-12'>\
+                          <div class='col-md-8'>\
                            <h3>1) audio</h3><br>\
                            <div class='row contAudio'>\
                             <div class='col-md-4 col-sm-4' id='divAudioa"+cantVideos+"'></div>\
@@ -397,6 +397,10 @@ $('#nuevoVideo').click(function () {
                                 </form>\
                            </div>\
                            </div></div>\
+                            <div class='col-md-4' id='divRespuesta'>\
+                                <h3>2) respuesta</h3>\
+                                <input class='respuesta' type='text' placeholder='1-3'>\
+                            </div>\
                             <div class='col-md-12'>\
                                <h3>2) imagen</h3>\
                                 <div class='row contPrg'>\
@@ -430,10 +434,7 @@ $('#nuevoVideo').click(function () {
                                     </div>\
                                 </div>\
                             </div>\
-                            <div class='col-md-12' id='divRespuesta'>\
-                                <h3>2) respuesta</h3>\
-                                <input class='respuesta' type='text' placeholder='1-3'>\
-                            </div></div></div>");
+                            </div></div><hr class='separacion'>");
         }
         cantOpciones=cantOpciones+3;
     }

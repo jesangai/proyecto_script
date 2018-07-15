@@ -1,3 +1,4 @@
+
 #divAudios{
     display: none;
 }
@@ -252,6 +253,10 @@ header {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding:20px 0px 40px 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 header .navbar {
@@ -435,5 +440,28 @@ text-decoration: none;
 color: tan;
 }
 
-
-
+#guardarEx{width: 240px;float: right; height: 50px; border-radius: 10px; margin-top: 5px;}
+#guardarEx:hover{background-color: cadetblue; color: white; font-weight: bold}
+.divCrear{
+    margin-top: 200px;
+    background-color: #6fa4aa;
+     padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}
+.txtportada{
+    background-color: white;margin-right: 7%;text-align: center;padding: 5px
+}
+#nuevoVideo{
+    width: 150px; border-radius: 10px;height: 50px;margin-top: 20px;
+}
+#nuevoVideo:hover{
+    background-color: white;
+}
+.divNV{
+    text-align: center
+}
+.separacion{margin: 40px 0px; background-color: white;height: 5px}
+#listexcursion,.divExcursion{margin-top: 150px;}
+.flecha{float: right}
