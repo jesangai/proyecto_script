@@ -377,12 +377,8 @@ $('#nuevoVideo').click(function () {
     if(errores==0){
         if(cantVideos!=5){
             cantVideos++;
-<<<<<<< HEAD
             $('#escenas').append("<div class='row'>\
                             <div class='col-md-4 col-sm-4 espacioVideo' id='div"+cantVideos+"'></div>\
-=======
-            $('#escenas').append("<div class='row crearVI'><div class='col-md-12 col-sm-12'><h2 class='txtportada'>AÑADIR VIDEO</h2></div><div class='col-md-4 col-sm-4 paso' id='div"+cantVideos+"'></div>\
->>>>>>> 5343ab266ad3e8b2fb3240f142278f060a694f1a
                             <div class='col-md-4 col-sm-4'>\
                             <form enctype='multipart/form-data' class='formularioVideov"+cantVideos+"'>\
                                 <input name='archivo' type='file' id='video'/>\
@@ -390,19 +386,11 @@ $('#nuevoVideo').click(function () {
                                 <input type='button' class='añadirvideo' value='añadir'  id='v"+cantVideos+"' onclick='subirVideo(this)'/><br/>\
                             </form>\
                             </div>\
-<<<<<<< HEAD
                             <div class='col-md-12 col-md-offset-12'>\
                         <h3>Crear actividades</h3>\
                         <div class='row'>\
                           <div class='col-md-12'>\
                            <h4>Audio</h4><br>\
-=======
-                            <div class='col-md-12 col-md-offset-12'><br><br>\
-                        <h2 class='txtportada'>PLANEA TU ACTIVIDAD</h2>\
-                        <div class='row'>\
-                          <div class='col-md-8 col-sm-8'>\
-                           <h3>PREGUNTA</h3><br>\
->>>>>>> 5343ab266ad3e8b2fb3240f142278f060a694f1a
                            <div class='row contAudio'>\
                             <div class='col-md-4 col-sm-4' id='divAudioa"+cantVideos+"'></div>\
                            <div class='col-md-4 col-sm-4'>\
@@ -451,14 +439,10 @@ $('#nuevoVideo').click(function () {
                                     </div>\
                                 </div>\
                             </div>\
-<<<<<<< HEAD
                             <div class='col-md-12' id='divRespuesta'>\
                                 <h4>Respuesta</h4>\
                                 <input class='respuesta' type='text' placeholder='1-3'>\
                             </div></div></div>");
-=======
-                            </div></div>");
->>>>>>> 5343ab266ad3e8b2fb3240f142278f060a694f1a
         }
         cantOpciones=cantOpciones+3;
     }

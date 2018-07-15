@@ -16,11 +16,11 @@
 
 
 .espacioPortada{
-  width:100%; height:100%; margin: 10px;
+  width:100%; margin: 10px;
 }
 
 #espacioVideo{
-  width:100%; height:100%; margin: 10px;
+  width:100%; margin: 10px;
 }
 
 hr { 
@@ -50,21 +50,13 @@ hr {
 }
 
 #portada{
-    height: 100%;
+  width: 100%;
 }
 
-<<<<<<< HEAD
 .listaimg{width:350px;}
 .imagenesResp{width:100%; margin:10px}
 .imgPregunta{width:180px;height:180px}
 .styleVideo{width:180px;height:180px}
-=======
-.styleAudio{width: 200px}
-.listaimg{width: 350px;}
-.fondoImg{background-color: blueviolet;width: 200px;height: 200px}
-.imgPregunta{width: 180px;height: 180px}
-.styleVideo{height: 100%}
->>>>>>> 5343ab266ad3e8b2fb3240f142278f060a694f1a
 #jquery-script-menu {
     position: fixed;
     height: 90px;
@@ -437,7 +429,7 @@ font header .navbar-default .navbar-nav li a:hover {
     background-color: white;
     color: black; 
     border: 2px solid #ffacb1;
-    padding:3px 5px;
+    padding:7px 10px 7px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -447,7 +439,7 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 #guardarEx:hover {
-    background-color: #ffacb1; /* Green */
+    background-color:#ffacb1; 
     color: white;
 }
 
@@ -501,8 +493,6 @@ text-decoration: none;
 color: tan;
 }
 
-#guardarEx{width: 240px;float: right; height: 50px; border-radius: 10px; margin-top: 5px;}
-#guardarEx:hover{background-color: cadetblue; color: white; font-weight: bold}
 .divCrear{
     margin-top: 200px;
     background-color: #6fa4aa;
@@ -514,12 +504,7 @@ color: tan;
 .txtportada{
     background-color: white;margin-right: 7%;text-align: center;padding: 5px
 }
-#nuevoVideo{
-    width: 150px; border-radius: 10px;height: 50px;margin-top: 20px;
-}
-#nuevoVideo:hover{
-    background-color: white;
-}
+
 .divNV{
     text-align: center
 }
