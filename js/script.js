@@ -175,7 +175,7 @@ function subirAudio(btnA){
             if (isImage(fileExtensionA)) {
                 //alert(valor);
                 //arrVideos.push();
-                $("#divAudio"+valor).html("<audio controls><source src='../excursiones/"+data+"' type='audio/mp3' ></audio>")}
+                $("#divAudio"+valor).html("<audio class='styleAudio' controls><source src='../excursiones/"+data+"' type='audio/mp3' ></audio>")}
         }
     });
 };
@@ -276,13 +276,16 @@ function recibirExcursion(){
         $.each(arrusuarios[0].excursion, function(i, resExc){
             if(resExc.titulo==tituloExcursion){
                //manejo todoo
+                alert(resExc.titulo);
                 $("#tituloLeer").html(resExc.titulo);
                 $("#descripcionLeer").html(resExc.descripcion);
                 $("#creditosLeer").html(resExc.creditos);
                 $("#portadaLeer").attr("src",resExc.portada);
                 $.each(resExc.pasos, function(i, resPaso){
-                    $("#pasos").append("<div class='col-md-6 col-sm-6'><video class='listaimg'><source src='"+resPaso.video+"'></video></div>");
-                    $("#actividades").append("<div class='col-md-6 col-sm-6'><audio controls><source src='"+resPaso.actividad.audio+"' type='audio/mp3' ></audio><br/><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img1' src='"+resPaso.actividad.imagen1+"' class='listaimg'></button><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img2' src='"+resPaso.actividad.imagen2+"' class='listaimg'></button><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img3' class='listaimg'src='"+resPaso.actividad.imagen3+"'></button></div>");
+                    $("#recibirPasos").append("<div class='col-md-12 col-sm-12 videoSolo row'>\
+                                                <div class='col-md-4 col-sm-4'><video controls class='listaimg'><source src='"+resPaso.video+"'></video></div>\
+                                                <div class='col-md-8 col-sm-8 row'><div class='col-md-12 col-sm-12'><audio controls><source src='"+resPaso.actividad.audio+"' type='audio/mp3' ></audio></div><br/><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img1' src='"+resPaso.actividad.imagen1+"' class='listaimg'></button></div><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img2' src='"+resPaso.actividad.imagen2+"' class='listaimg'></button></div><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img3' class='listaimg'src='"+resPaso.actividad.imagen3+"'></button></div></div>");
+                    
                 });
                 
             }
@@ -291,17 +294,18 @@ function recibirExcursion(){
 }
 
 function validarRespuesta(btn, respuesta){
-    //alert(btn.firstChild.getAttribute("id"));
+    var padre=btn.parentNode.parentNode;
     if(btn.firstChild.getAttribute("id")=="img"+respuesta){
-       $("#divAudios").html("<audio id='correcta' controls autoplay><source src='../images/bambi1.mp3' type='audio/mp3'></audio>");
-        //console.log($('#btnOpcion'))
-//        $('.btnOpcion')[0].disabled=true;
-//        $('.btnOpcion')[1].disabled=true;
-//        $('.btnOpcion')[2].disabled=true;
+       $("#divAudiosEx").html("<audio id='correcta' controls autoplay><source src='../audios/bien.wav' type='audio/wav'></audio>");
+        
+        //console.log(padre.childNodes[2]);
+        padre.childNodes[2].firstChild.disabled=true;
+        padre.childNodes[3].firstChild.disabled=true;
+        padre.childNodes[4].firstChild.disabled=true;
     }else{
        //alert("Respuesta incorrecta, elije la numero "+respuesta);
-        $("#divAudios").html("<audio id='incorrecta' controls autoplay><source src='../images/bambi1.mp3' type='audio/mp3' ></audio>");
-        
+        $("#divAudiosEx").html("<audio id='incorrecta' controls autoplay><source src='../audios/mal.wav' type='audio/wav' ></audio>");
+        padre.childNodes[respuesta+1].firstChild.setAttribute("style","background-color:red");
     }
 }
 function pasar(btn){
@@ -315,11 +319,14 @@ var cantVideos=1;
 var cantOpciones=3;
 $('#guardarEx').click(function () {
     var arrusuarios= [];
-   
+    
     $.getJSON('info.json', function(data){
         $.each(data, function(i, resultado){
           arrusuarios.push(new Usuario(resultado))
         });
+        //console.log(video=$('#escenas').children()[0].childNodes[3].firstChild.firstChild);
+        
+        //alert(video);
         var errores=validarDatos();
         if(errores==0){
             var pasos=[];
@@ -334,8 +341,8 @@ $('#guardarEx').click(function () {
                   cantOpciones=cantOpciones+3;
                   var res= $('.respuesta')[i].value;
                   actTmp.llenarattractividad(audio,img1,img2,img3,res);
-                  
-                  var video=$('#escenas').children()[i].firstElementChild.firstChild.firstChild.getAttribute("src");
+                  //console.log(video=$('#escenas').children()[i].childNodes[0].firstChild);
+                  var video=$('#escenas').children()[0].childNodes[3].firstChild.firstChild.getAttribute("src");
                   
                   var paso=new Pasos();
                   paso.llenarattrpasos(video,actTmp);
@@ -371,21 +378,19 @@ $('#nuevoVideo').click(function () {
     if(errores==0){
         if(cantVideos!=5){
             cantVideos++;
-            $('#escenas').append("<div class='row'>\
-                            <div class='col-md-4 col-sm-4 paso' id='div"+cantVideos+"'></div>\
+            $('#escenas').append("<div class='row crearVI'><div class='col-md-12 col-sm-12'><h2 class='txtportada'>AÑADIR VIDEO</h2></div><div class='col-md-4 col-sm-4 paso' id='div"+cantVideos+"'></div>\
                             <div class='col-md-4 col-sm-4'>\
                             <form enctype='multipart/form-data' class='formularioVideov"+cantVideos+"'>\
-                                <input name='archivo' type='file' id='video' />\
-                                <br /><br />\
-                                <input type='button' class='añadirvideo' value='añadir' id='v"+cantVideos+"' onclick='subirVideo(this)'/>\
-                                <br />\
+                                <input name='archivo' type='file' id='video'/>\
+                                <br/><br/>\
+                                <input type='button' class='añadirvideo' value='añadir'  id='v"+cantVideos+"' onclick='subirVideo(this)'/><br/>\
                             </form>\
                             </div>\
-                            <div class='col-md-12 col-md-offset-12'>\
-                        <h2>PLANEA TU ACTIVIDAD</h2>\
+                            <div class='col-md-12 col-md-offset-12'><br><br>\
+                        <h2 class='txtportada'>PLANEA TU ACTIVIDAD</h2>\
                         <div class='row'>\
-                          <div class='col-md-8'>\
-                           <h3>1) audio</h3><br>\
+                          <div class='col-md-8 col-sm-8'>\
+                           <h3>PREGUNTA</h3><br>\
                            <div class='row contAudio'>\
                             <div class='col-md-4 col-sm-4' id='divAudioa"+cantVideos+"'></div>\
                            <div class='col-md-4 col-sm-4'>\
@@ -397,12 +402,12 @@ $('#nuevoVideo').click(function () {
                                 </form>\
                            </div>\
                            </div></div>\
-                            <div class='col-md-4' id='divRespuesta'>\
-                                <h3>2) respuesta</h3>\
+                            <div class='col-md-4 col-sm-4' id='divRespuesta'>\
+                                <h3>RESPUESTA</h3>\
                                 <input class='respuesta' type='text' placeholder='1-3'>\
                             </div>\
                             <div class='col-md-12'>\
-                               <h3>2) imagen</h3>\
+                               <h3>OPCIONES</h3>\
                                 <div class='row contPrg'>\
                                     <div class='col-md-4 col-sm-4' id='divPrg'>\
                                         <div class='fondoImg' id='divi"+(cantOpciones+1)+"'></div>\
@@ -434,7 +439,7 @@ $('#nuevoVideo').click(function () {
                                     </div>\
                                 </div>\
                             </div>\
-                            </div></div><hr class='separacion'>");
+                            </div></div>");
         }
         cantOpciones=cantOpciones+3;
     }
@@ -442,10 +447,14 @@ $('#nuevoVideo').click(function () {
 function validarDatos() {
     //alert($('#escenas').children().length);
     var errores=0;
+    if($('#titulo').val()==""){
+            errores++;
+        //alert("no hay titulo");
+    }
     $.each($('#escenas').children(), function(i, resultado){
 //        alert(resultado.firstElementChild.childNodes);
-//        console.log(resultado.firstElementChild.childNodes);
-          if(resultado.firstElementChild.childNodes.length==1){
+          console.log(resultado.firstElementChild.childNodes);
+          if(resultado.firstElementChild.childNodes.length>=1){
              //console.log(resultado.childNodes.find(item));
           }else{
               errores++;
@@ -453,7 +462,7 @@ function validarDatos() {
           }
     });
     $.each($('.contAudio'), function(i, resAudio){
-          if(resAudio.firstElementChild.childNodes.length==1){
+          if(resAudio.firstElementChild.childNodes.length>=1){
              console.log("lleno");
           }else{
               errores++;
@@ -461,7 +470,7 @@ function validarDatos() {
           }
     });
     $.each($('.contPrg').children(), function(i, resPrg){
-          if(resPrg.firstElementChild.childNodes.length==1){
+          if(resPrg.firstElementChild.childNodes.length>=1){
              console.log("lleno");
           }else{
               errores++;

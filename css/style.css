@@ -1,5 +1,5 @@
 
-#divAudios{
+#divAudios,#divAudiosEx{
     display: none;
 }
 #imgLogo{
@@ -26,14 +26,14 @@
     background-color: aquamarine; width: 200px; height: 200px; margin: 10px;
 }
 #portada{
-    width: 300px
+    height: 100%;
 }
 
-
+.styleAudio{width: 200px}
 .listaimg{width: 350px;}
 .fondoImg{background-color: blueviolet;width: 200px;height: 200px}
 .imgPregunta{width: 180px;height: 180px}
-.styleVideo{width: 180px;height: 180px}
+.styleVideo{height: 100%}
 #jquery-script-menu {
     position: fixed;
     height: 90px;
@@ -462,6 +462,22 @@ color: tan;
 .divNV{
     text-align: center
 }
+.colorear{background-color: red;border: 5px solid red;}
 .separacion{margin: 40px 0px; background-color: white;height: 5px}
 #listexcursion,.divExcursion{margin-top: 150px;}
 .flecha{float: right}
+
+.recibirPortada{text-align: center;background-color: #6fa4aa;
+     padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;}
+.videoSolo{
+    background-color: #6fa4aa; margin: 10px; padding: 10px;
+}
+.videoSolo img{width: 150px}
+
+.crearVI{margin-top: 30px;background-color: #6fa4aa;padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;}
