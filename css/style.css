@@ -1,3 +1,7 @@
+
+#divAudios,#divAudiosEx{
+    display: none;
+}
 #imgLogo{
    width:4em; 
    height:4em;
@@ -46,13 +50,21 @@ hr {
 }
 
 #portada{
-    width: 300px
+    height: 100%;
 }
 
+<<<<<<< HEAD
 .listaimg{width:350px;}
 .imagenesResp{width:100%; margin:10px}
 .imgPregunta{width:180px;height:180px}
 .styleVideo{width:180px;height:180px}
+=======
+.styleAudio{width: 200px}
+.listaimg{width: 350px;}
+.fondoImg{background-color: blueviolet;width: 200px;height: 200px}
+.imgPregunta{width: 180px;height: 180px}
+.styleVideo{height: 100%}
+>>>>>>> 5343ab266ad3e8b2fb3240f142278f060a694f1a
 #jquery-script-menu {
     position: fixed;
     height: 90px;
@@ -269,6 +281,10 @@ header {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding:20px 0px 40px 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 header .navbar {
@@ -485,5 +501,44 @@ text-decoration: none;
 color: tan;
 }
 
+#guardarEx{width: 240px;float: right; height: 50px; border-radius: 10px; margin-top: 5px;}
+#guardarEx:hover{background-color: cadetblue; color: white; font-weight: bold}
+.divCrear{
+    margin-top: 200px;
+    background-color: #6fa4aa;
+     padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}
+.txtportada{
+    background-color: white;margin-right: 7%;text-align: center;padding: 5px
+}
+#nuevoVideo{
+    width: 150px; border-radius: 10px;height: 50px;margin-top: 20px;
+}
+#nuevoVideo:hover{
+    background-color: white;
+}
+.divNV{
+    text-align: center
+}
+.colorear{background-color: red;border: 5px solid red;}
+.separacion{margin: 40px 0px; background-color: white;height: 5px}
+#listexcursion,.divExcursion{margin-top: 150px;}
+.flecha{float: right}
 
+.recibirPortada{text-align: center;background-color: #6fa4aa;
+     padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;}
+.videoSolo{
+    background-color: #6fa4aa; margin: 10px; padding: 10px;
+}
+.videoSolo img{width: 150px}
 
+.crearVI{margin-top: 30px;background-color: #6fa4aa;padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;}

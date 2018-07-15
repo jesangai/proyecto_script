@@ -6,18 +6,15 @@
     <title>Proyecto Script</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" >
    </head>
-<<<<<<< HEAD
-   
-  <body>
-=======
   <body onload="cargarIndex()">
->>>>>>> 5343ab266ad3e8b2fb3240f142278f060a694f1a
     
   <!--   Logo -->
  
@@ -26,9 +23,12 @@
     <a href="index.html">
       <img id="imgLogo" src="images/logo1.png" alt="Logo">
     </a>
-   </div>   
+  </div>
+</div>
+
+
         <!-- section Start -->
-   <section id="feature">  
+       <section id="feature">
           <div class="row">
             <div class="col-md-4 col-sm-4" >
                 <a href="pages/crearexcursion.html"><button id="btncrear">Crear excursión</button></a>
@@ -36,15 +36,6 @@
             <div class="col-md-4 col-sm-4" >
                 <a href="pages/leerexcursion.html"> <button id="btnleer">Leer excursión</button></a>
             </div>
-<<<<<<< HEAD
-            <div class="col-md-4 col-sm-4" >
-               <a id="exportar" 
-               href="#"><button id="btnExportar">Exportar JSON</button></a>
-            </div>
-           </div>
-    </section>
-</div>
-=======
              <div class="col-md-4 col-sm-4" >
              <a href="#" id="btnExportar">Exportar JSON</a>
           </div>
@@ -52,7 +43,6 @@
      </section>
       
 
->>>>>>> 5343ab266ad3e8b2fb3240f142278f060a694f1a
 
         <!-- footer Start -->
         <footer>
@@ -63,10 +53,11 @@
             </div>
         </footer>        
            
-      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="js/script.js"></script>
-      <script src="js/bootstrap.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-  </body>
-  
+      
+        <script src="js/bootstrap.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    </body>
 </html>
