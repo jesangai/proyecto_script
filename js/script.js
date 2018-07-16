@@ -259,13 +259,13 @@ function listarExcursion(){
         });
          
         $.each(arrusuarios[0].excursion, function(i, resultusuarios){
-            $("#listexcursion").append("<div class='col-md-4 col-sm-4'><div><button onclick='pasar(this)'><img class='listaimg' src='"+resultusuarios.portada+"'/> <h1>"+resultusuarios.titulo+"</h1><p>"+resultusuarios.descripcion+"</p></button></div></div>");
+            $("#listexcursion").append("<div class='col-md-4 col-sm-4'><div><button onclick='pasar("+i+")'><img class='listaimg' src='"+resultusuarios.portada+"'/> <h1>"+resultusuarios.titulo+"</h1><p>"+resultusuarios.descripcion+"</p></button></div></div>");
         });
     });
 };
 
 function recibirExcursion(){
-    var tituloExcursion=localStorage.getItem("varPasar");
+    var posExcursion=localStorage.getItem("varPasar");
     //alert(tituloExcursion);
     var arrusuarios= [];
    
@@ -273,22 +273,19 @@ function recibirExcursion(){
         $.each(data, function(i, resultado){
           arrusuarios.push(new Usuario(resultado))
         });
-        $.each(arrusuarios[0].excursion, function(i, resExc){
-            if(resExc.titulo==tituloExcursion){
-               //manejo todoo
-                alert(resExc.titulo);
-                $("#tituloLeer").html(resExc.titulo);
-                $("#descripcionLeer").html(resExc.descripcion);
-                $("#creditosLeer").html(resExc.creditos);
-                $("#portadaLeer").attr("src",resExc.portada);
-                $.each(resExc.pasos, function(i, resPaso){
-                    $("#recibirPasos").append("<div class='col-md-12 col-sm-12 videoSolo row'>\
-                                                <div class='col-md-4 col-sm-4'><video controls class='listaimg'><source src='"+resPaso.video+"'></video></div>\
-                                                <div class='col-md-8 col-sm-8 row'><div class='col-md-12 col-sm-12'><audio controls><source src='"+resPaso.actividad.audio+"' type='audio/mp3' ></audio></div><br/><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img1' src='"+resPaso.actividad.imagen1+"' class='listaimg'></button></div><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img2' src='"+resPaso.actividad.imagen2+"' class='listaimg'></button></div><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img3' class='listaimg'src='"+resPaso.actividad.imagen3+"'></button></div></div>");
-                    
-                });
-                
-            }
+        $.each(arrusuarios[posExcursion].excursion, function(i, resExc){
+           //manejo todoo
+            //alert(resExc.titulo);
+            $("#tituloLeer").html(resExc.titulo);
+            $("#descripcionLeer").html(resExc.descripcion);
+            $("#creditosLeer").html(resExc.creditos);
+            $("#portadaLeer").attr("src",resExc.portada);
+            $.each(resExc.pasos, function(i, resPaso){
+                $("#recibirPasos").append("<div class='col-md-12 col-sm-12 videoSolo row'>\
+                                            <div class='col-md-4 col-sm-4'><video controls class='listaimg'><source src='"+resPaso.video+"'></video></div>\
+                                            <div class='col-md-8 col-sm-8 row'><div class='col-md-12 col-sm-12'><audio controls><source src='"+resPaso.actividad.audio+"' type='audio/mp3' ></audio></div><br/><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img1' src='"+resPaso.actividad.imagen1+"' class='listaimg'></button></div><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img2' src='"+resPaso.actividad.imagen2+"' class='listaimg'></button></div><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img3' class='listaimg'src='"+resPaso.actividad.imagen3+"'></button></div></div>");
+
+            });
         });
     });
 }
@@ -308,11 +305,8 @@ function validarRespuesta(btn, respuesta){
         padre.childNodes[respuesta+1].firstChild.setAttribute("style","background-color:red");
     }
 }
-function pasar(btn){
-//    alert(btn.childNodes[2].innerHTML);
-//    console.log(btn.childNodes[2].innerHTML);
-    var excursionElegida=btn.childNodes[2].innerHTML;
-    localStorage.setItem("varPasar",excursionElegida);
+function pasar(pos){
+    localStorage.setItem("varPasar",pos);
     window.location = "excursion.html";
 }
 var cantVideos=1;
@@ -341,8 +335,9 @@ $('#guardarEx').click(function () {
                   cantOpciones=cantOpciones+3;
                   var res= $('.respuesta')[i].value;
                   actTmp.llenarattractividad(audio,img1,img2,img3,res);
-                  //console.log(video=$('#escenas').children()[i].childNodes[0].firstChild);
-                  var video=$('#escenas').children()[0].childNodes[3].firstChild.firstChild.getAttribute("src");
+                  //console.log($('#escenas').childNodes);
+                  console.log($('#escenas').children());
+                  var video=$('#escenas').children()[i].childNodes[3].firstChild.firstChild.getAttribute("src");
                   
                   var paso=new Pasos();
                   paso.llenarattrpasos(video,actTmp);
@@ -363,7 +358,7 @@ $('#guardarEx').click(function () {
                 success: function (data) {
                     //alert(data);
                     //alert("au: "+usuarios.length);
-                    window.location.href="../index.html";
+                    window.location.href="../index.php";
                 }
             });
         }else{
