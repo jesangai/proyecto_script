@@ -1,1 +1,1 @@
-[{"user":"jesangai","pass":"1234","nombre":"jessica","excursion":[]}]
+[{"user":"jesangai","pass":"1234","nombre":"jessica","excursion":[{"titulo":"Pony","descripcion":"Soy un pony","portada":"..\/excursiones\/bambi.jpg","creditos":"sadad","pasos":[{"video":"..\/excursiones\/videoEducativosLetraA.mp4","actividad":{"audio":"..\/excursiones\/Audio 4_1.wav","imagen1":"..\/excursiones\/letra_A.png","imagen2":"..\/excursiones\/letra.png","imagen3":"..\/excursiones\/cereza.png","respuesta":"1"}}]}]}]
