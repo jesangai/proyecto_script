@@ -239,6 +239,7 @@ function isImage(extension) {
         case 'mp3':
         case 'wav':
         case 'mp4':
+        case 'm4a':
         case 'ogg':
             return true;
             break;
