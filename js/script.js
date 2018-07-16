@@ -319,7 +319,7 @@ $('#guardarEx').click(function () {
           arrusuarios.push(new Usuario(resultado))
         });
         //console.log(video=$('#escenas').children()[0].childNodes[3].firstChild.firstChild);
-        
+        //console.log($('#escenas').children()[0].children[1].firstChild.firstChild.getAttribute("src"));
         //alert(video);
         var errores=validarDatos();
         if(errores==0){
@@ -337,7 +337,7 @@ $('#guardarEx').click(function () {
                   actTmp.llenarattractividad(audio,img1,img2,img3,res);
                   //console.log($('#escenas').childNodes);
                   console.log($('#escenas').children());
-                  var video=$('#escenas').children()[i].childNodes[3].firstChild.firstChild.getAttribute("src");
+                  var video=$('#escenas').children()[i].children[1].firstChild.firstChild.getAttribute("src");
                   
                   var paso=new Pasos();
                   paso.llenarattrpasos(video,actTmp);
