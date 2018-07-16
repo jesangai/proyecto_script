@@ -509,8 +509,8 @@ function cargarIndex(){
         
         var data= "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(arrusuarios));
         //alert(data);
-        $("#btnExportar").attr("href","data:"+data);
-        $("#btnExportar").attr("download","info.json");
+        $("#exportar").attr("href","data:"+data);
+        $("#exportar").attr("download","info.json");
     });
     
 };
