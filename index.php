@@ -20,7 +20,7 @@
  
 <div class="container">
   <div class="jumbotron">
-    <a href="index.html">
+    <a href="index.php">
       <img id="imgLogo" src="images/logo1.png" alt="Logo">
     </a>
   </div>

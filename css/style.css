@@ -3,9 +3,9 @@
     display: none;
 }
 #imgLogo{
-   width:4em; 
-   height:4em;
-   
+   width:7em; 
+   height:7em;
+    margin-left: 45%;
 }
 
 #logo{
@@ -300,7 +300,7 @@ font header .navbar-default .navbar-nav li a:hover {
   box-sizing: border-box;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  padding:300px 300px 100px 300px;
+  padding:300px 22% 100px 22%;
   
 }
 
@@ -464,14 +464,14 @@ color: tan;
 }
 .colorear{background-color: red;border: 5px solid red;}
 .separacion{margin: 40px 0px; background-color: white;height: 5px}
-#listexcursion,.divExcursion{margin-top: 150px;}
+#listexcursion,.divExcursion{margin-top: 200px;}
 .flecha{float: right}
 
 .recibirPortada{text-align: center;background-color: #6fa4aa;
      padding-top: 50px;
-    padding-right: 30px;
+    padding-right: 10%;
     padding-bottom: 50px;
-    padding-left: 80px;}
+    padding-left: 10%;}
 .videoSolo{
     background-color: #6fa4aa; margin: 10px; padding: 10px;
 }
@@ -481,3 +481,21 @@ color: tan;
     padding-right: 30px;
     padding-bottom: 50px;
     padding-left: 80px;}
+
+
+
+@media only screen and (max-width: 400px) {
+    
+    #feature {
+      padding:100px 22% 100px 22%;
+    }
+    #imgLogo{
+        width: 6em;
+        height: 6em;
+        margin-left: 35%;
+        margin-top: 5px;
+    }
+    .listaimg{width: 250px;}
+    #listexcursion div{margin-top: 2%}
+    
+}
