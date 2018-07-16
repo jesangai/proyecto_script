@@ -65,6 +65,8 @@ class Pasos{
 }
 
 class Actividad{
+    
+    
       
     llenarobjactividad(objactividad){
         this.audio = objactividad.audio;
@@ -257,7 +259,7 @@ function listarExcursion(){
         });
          
         $.each(arrusuarios[0].excursion, function(i, resultusuarios){
-            $("#listexcursion").append("<div class='col-md-6 col-sm-6'><div><button onclick='pasar(this)'><img class='listaimg' src='"+resultusuarios.portada+"'/> <h1>"+resultusuarios.titulo+"</h1><p>"+resultusuarios.descripcion+"</p></button></div></div>");
+            $("#listexcursion").append("<div class='col-md-4 col-sm-4'><div><button onclick='pasar(this)'><img class='listaimg' src='"+resultusuarios.portada+"'/> <h1>"+resultusuarios.titulo+"</h1><p>"+resultusuarios.descripcion+"</p></button></div></div>");
         });
     });
 };
@@ -274,7 +276,7 @@ function recibirExcursion(){
         $.each(arrusuarios[0].excursion, function(i, resExc){
             if(resExc.titulo==tituloExcursion){
                //manejo todoo
-                //alert(resExc.titulo);
+                alert(resExc.titulo);
                 $("#tituloLeer").html(resExc.titulo);
                 $("#descripcionLeer").html(resExc.descripcion);
                 $("#creditosLeer").html(resExc.creditos);
@@ -368,7 +370,6 @@ $('#guardarEx').click(function () {
             alert("Llene todos los campos!");
         }
         //window.location.href
-
         });
 });
 $('#nuevoVideo').click(function () {
@@ -377,8 +378,7 @@ $('#nuevoVideo').click(function () {
     if(errores==0){
         if(cantVideos!=5){
             cantVideos++;
-            $('#escenas').append("<div class='row'>\
-                            <div class='col-md-4 col-sm-4 espacioVideo' id='div"+cantVideos+"'></div>\
+            $('#escenas').append("<div class='row crearVI'><div class='col-md-12 col-sm-12'><h2 class='txtportada'>AÑADIR VIDEO</h2></div><div class='col-md-4 col-sm-4 paso' id='div"+cantVideos+"'></div>\
                             <div class='col-md-4 col-sm-4'>\
                             <form enctype='multipart/form-data' class='formularioVideov"+cantVideos+"'>\
                                 <input name='archivo' type='file' id='video'/>\
@@ -386,11 +386,11 @@ $('#nuevoVideo').click(function () {
                                 <input type='button' class='añadirvideo' value='añadir'  id='v"+cantVideos+"' onclick='subirVideo(this)'/><br/>\
                             </form>\
                             </div>\
-                            <div class='col-md-12 col-md-offset-12'>\
-                        <h3>Crear actividades</h3>\
+                            <div class='col-md-12 col-md-offset-12'><br><br>\
+                        <h2 class='txtportada'>PLANEA TU ACTIVIDAD</h2>\
                         <div class='row'>\
-                          <div class='col-md-12'>\
-                           <h4>Audio</h4><br>\
+                          <div class='col-md-8 col-sm-8'>\
+                           <h3>PREGUNTA</h3><br>\
                            <div class='row contAudio'>\
                             <div class='col-md-4 col-sm-4' id='divAudioa"+cantVideos+"'></div>\
                            <div class='col-md-4 col-sm-4'>\
@@ -410,7 +410,7 @@ $('#nuevoVideo').click(function () {
                                <h3>OPCIONES</h3>\
                                 <div class='row contPrg'>\
                                     <div class='col-md-4 col-sm-4' id='divPrg'>\
-                                        <div class='imagenesResp' id='divi"+(cantOpciones+1)+"'></div>\
+                                        <div class='fondoImg' id='divi"+(cantOpciones+1)+"'></div>\
                                         <form enctype='multipart/form-data' class='formularioImagenesi"+(cantOpciones+1)+"'>\
                                             <input name='archivo' type='file' id='imagen' />\
                                             <br/><br/>\
@@ -419,7 +419,7 @@ $('#nuevoVideo').click(function () {
                                         </form>\
                                     </div>\
                                     <div class='col-md-4 col-sm-4' id='divPrg'>\
-                                        <div class='imagenesResp' id='divi"+(cantOpciones+2)+"'></div>\
+                                        <div class='fondoImg' id='divi"+(cantOpciones+2)+"'></div>\
                                         <form enctype='multipart/form-data' class='formularioImagenesi"+(cantOpciones+2)+"'>\
                                             <input name='archivo' type='file' id='imagen' />\
                                             <br/><br/>\
@@ -428,7 +428,7 @@ $('#nuevoVideo').click(function () {
                                         </form>\
                                     </div>\
                                     <div class='col-md-4 col-sm-4' id='divPrg'>\
-                                        <div class='imagenesResp' id='divi"+(cantOpciones+3)+"'></div>\
+                                        <div class='fondoImg' id='divi"+(cantOpciones+3)+"'></div>\
                                         <form enctype='multipart/form-data' class='formularioImagenesi"+(cantOpciones+3)+"'>\
                                             <input name='archivo' type='file' id='imagen' />\
                                             <br/><br/>\
@@ -439,10 +439,7 @@ $('#nuevoVideo').click(function () {
                                     </div>\
                                 </div>\
                             </div>\
-                            <div class='col-md-12' id='divRespuesta'>\
-                                <h4>Respuesta</h4>\
-                                <input class='respuesta' type='text' placeholder='1-3'>\
-                            </div></div></div>");
+                            </div></div>");
         }
         cantOpciones=cantOpciones+3;
     }
@@ -509,8 +506,8 @@ function cargarIndex(){
         
         var data= "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(arrusuarios));
         //alert(data);
-        $("#exportar").attr("href","data:"+data);
-        $("#exportar").attr("download","info.json");
+        $("#btnExportar").attr("href","data:"+data);
+        $("#btnExportar").attr("download","info.json");
     });
     
 };

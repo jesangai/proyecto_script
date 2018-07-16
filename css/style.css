@@ -15,48 +15,25 @@
 }
 
 
-.espacioPortada{
-  width:100%; margin: 10px;
+#exportar{
+   position:absolute;
+   top:2em;
+   right: -36em;
+   color: black;
 }
-
-#espacioVideo{
-  width:100%; margin: 10px;
+  
+.paso, .portada{
+    background-color: aquamarine; width: 200px; height: 200px; margin: 10px;
 }
-
-hr { 
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
-} 
-
-.separador{
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style:dashed;
-    border-width: 1px; 
-}
-
-
-#nuevoVideo{
-  position: relative;
-  top:2em;
-}
-
 #portada{
-  width: 100%;
+    height: 100%;
 }
 
-.listaimg{width:350px;}
-.imagenesResp{width:100%; margin:10px}
-.imgPregunta{width:180px;height:180px}
-.styleVideo{width:180px;height:180px}
+.styleAudio{width: 200px}
+.listaimg{width: 350px;}
+.fondoImg{background-color: blueviolet;width: 200px;height: 200px}
+.imgPregunta{width: 180px;height: 180px}
+.styleVideo{height: 100%}
 #jquery-script-menu {
     position: fixed;
     height: 90px;
@@ -104,6 +81,7 @@ hr {
     width: 100%;
     height: 700px;
     background-color: red;
+    
     text-align: center;
 }
 
@@ -116,6 +94,9 @@ hr {
     height: 700px;
 }
 
+.container{
+ 
+}
 
 #btncrear{
     -webkit-transition-duration: 0.4s; /* Safari */
@@ -128,7 +109,6 @@ hr {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    
 }
 
 
@@ -189,7 +169,7 @@ hr {
 
 
 
-
+btnExportar
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
@@ -202,12 +182,11 @@ body {
 font-family: 'Open Sans', sans-serif;
 -webkit-font-smoothing: antialiased;
 display: block;
+overflow: hidden;
 width: 100%; /* Set width to 100% */
-
-
+min-height: 200px;
+max-height: 300px;
 }
-
-
 
 h1,
 h2,
@@ -307,13 +286,22 @@ font header .navbar-default .navbar-nav li a:hover {
 /*--
 	botones excursion
 --*/
-.fondoMenu{
+#feature {
   background-image: url("../images/fondo3.jpg");
-  background-repeat: no-repeat;
-  background-attachment: inherit;
-  background-position: center;
+  background-repeat: no-repeat, repeat;
   background-size: auto;
-  padding:50px;
+  background-position: 50% 50%;
+  overflow: visible;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding:300px 300px 100px 300px;
+  
 }
 
 #banner{
@@ -346,7 +334,8 @@ font header .navbar-default .navbar-nav li a:hover {
   background: tan;
   color: azure;
   padding: 10px 20px;
- 
+  position: relative;
+  left: 35%;
 }
 
 .block form {
@@ -404,40 +393,6 @@ font header .navbar-default .navbar-nav li a:hover {
   padding: 40px 0px;
 }
 
-.contenedor{
-  background-color: #6fa4aa;
- padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;
-
-}
-
-/*--
-	Página Crear Excursión
---*/
-
-#guardarEx{
-    background-color: white;
-    color: black; 
-    border: 2px solid #ffacb1;
-    padding:7px 10px 7px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-#guardarEx:hover {
-    background-color:#ffacb1; 
-    color: white;
-}
-
-
-
-
 /*--
 	footer Start 
 --*/
@@ -485,6 +440,8 @@ text-decoration: none;
 color: tan;
 }
 
+#guardarEx{width: 240px;float: right; height: 50px; border-radius: 10px; margin-top: 5px;}
+#guardarEx:hover{background-color: cadetblue; color: white; font-weight: bold}
 .divCrear{
     margin-top: 200px;
     background-color: #6fa4aa;
@@ -496,7 +453,12 @@ color: tan;
 .txtportada{
     background-color: white;margin-right: 7%;text-align: center;padding: 5px
 }
-
+#nuevoVideo{
+    width: 150px; border-radius: 10px;height: 50px;margin-top: 20px;
+}
+#nuevoVideo:hover{
+    background-color: white;
+}
 .divNV{
     text-align: center
 }

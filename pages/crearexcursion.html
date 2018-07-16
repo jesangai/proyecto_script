@@ -6,154 +6,176 @@
     <title>crear excursion</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        
     <!-- CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link href="../css/bootstrap.css" rel="stylesheet" >
-    <link rel="stylesheet" ref="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      
+      
+     
+        <link rel="stylesheet" ref="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        
    </head>
   <body>
     <!--  -->
+   
+   
   <!-- Header Start -->
-<div class="container">
-  <div class="jumbotron">
-      <div class="col-md-6 col-sm-6">
-       <a href="../index.html">
-       <img id="imgLogo" src="../images/logo1.png" alt="Logo">
-       </a>
-      </div>     
-  </div>
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- header Nav Start -->
+              <nav >
+                <div class="container-fluid row">
+                      <!-- Brand and toggle get grouped for better mobile display -->
+                      <div class="col-md-4 col-sm-4">
+                        <a class="navbar-brand" href="../index.html">
+                          <img id="imgLogo" src="../images/logo1.png" alt="Logo">
+                        </a>
+                      </div>
+                      <div class="col-md-8 col-sm-8"> 
+                          <button id="guardarEx">GUARDAR</button>
+                      </div>
+                </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </header><!-- header close -->
 
-
-<div class="contenedor">  
-
-  <div class="text-center">   
-    <h3>Crear portada</h3>
- </div>
-    
-  <div class="row">
-   <div id="divPortada" class="espacioPortada col-md-4 col-sm-4"></div>
-    <div class="col-sm-3">
-        <div class="col-md-3 col-sm-3">
-            <label for="">Título</label><input id="titulo" type="text" value="">
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <label for="">Descripción</label><input id="descripcion" type="text" value="">
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <label for="">Créditos</label><input id="creditos" type="text" value="">
-        </div>
-    </div>
-    
-    <div class="col-sm-3"> 
-      <form enctype="multipart/form-data" class="formularioPortada">
+        
+     
+          <div class="container divCrear">
+           
+            <h1 class="txtportada">PORTADA</h1>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="col-md-3 col-sm-3">
+                        <label for="">Título</label><input id="titulo" type="text" value="">
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <label for="">Descripción</label><input id="descripcion" type="text" value="">
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <label for="">Créditos</label><input id="creditos" type="text" value="">
+                    </div>
+                </div>
+                <div id="divPortada" class="portada col-md-4 col-sm-4">PORTADA</div>
+                <div class="col-md-4 col-sm-4">
+                    <form enctype="multipart/form-data" class="formularioPortada">
                         <input name="archivo" type="file" id="imgPortada" />
                         <br />
                         <br />
                         <input type="button" class="añadirPortada" value="Añadir" />
                         <br />
-       </form>
-     <div class="messagesE"></div>
+                    </form>
+                    <!--div para visualizar mensajes-->
+                    <div class="messagesE"></div>
                     <br />
                     <br />
                     <!--div para visualizar en el caso de imagen-->
-    <div class="showImage"></div>
-    </div>
-</div><br>
-<hr>
- <div class="text-center">
-     <h3>Crear video</h3>
-</div>
-  <div class="row">
-      <div class="col-md-6 col-sm-6">
-            <div id="escenas">
-            <div id="espacioVideo" id='div1'></div>
-      <div class="col-md-6 col-sm-6">
-        <form enctype="multipart/form-data" class="formularioVideov1">
-         <input name="archivo" type="file" id="video" />
-         <input type="button" class="añadirvideo" value="Añadir" id="v1" onclick="subirVideo(this)"/>
-        </form>
-      </div>
-  </div>
-  <br>
-  </div>
-<hr>                
-  <div class="col-md-12 col-md-offset-12" ><hr>
-        <h3>Crear actividades</h3>
-            <div class="row">
-              <div class="col-md-12"><br>
-                           <h4>Audio</h4>
-                           <div class="row contAudio">
-                            <div class="col-md-4 col-sm-4" id="divAudioa1"></div>
-                           <div class="col-md-4 col-sm-4">
-                                <form enctype="multipart/form-data" class="formularioAudioa1">
-                                    <input name="archivo" type="file" id="audio" />
-                                    <br/><br/>
-                                    <input type="button" class="añadirvideo" value="Añadir" id="a1" onclick="subirAudio(this)"/>
-                                    <br />
-                                </form>
-                                <br>
-                           </div>
-                            <div class="col-md-12"><hr class="separador">
-                            <h4>Imágenes</h4><br>
-                                <div class="row contPrg">
-                                    <div class="col-md-4 col-sm-4" id="divPrg">
-                                        <div class="imagenesResp" id="divi1"></div>
-                                        <form enctype="multipart/form-data" class="formularioImagenesi1">
-                                            <input name="archivo" type="file" id="imagen" />
+                    <div class="showImage"></div>
+                </div>
+            </div>
+            </div>
+            <div class="container">
+                <h1 class="txtportada">PASOS </h1> <br> <br> <br> 
+                <div id="escenas">
+                    <div class="row crearVI">
+                        <div class="col-md-12 col-sm-12"> <h2 class="txtportada">AÑADIR VIDEO</h2></div>
+                        <div class="col-md-4 col-sm-4 paso" id="div1"></div>
+                        <div class="col-md-4 col-sm-4">
+                            <form enctype="multipart/form-data" class="formularioVideov1">
+                                <input name="archivo" type="file" id="video" />
+                                <br/><br/>
+                                <input type="button" class="añadirvideo" value="añadir" id="v1" onclick="subirVideo(this)"/>
+                                <br />
+                            </form>
+                        </div>
+                        <div class="col-md-12 col-md-offset-12" >
+                            <br> <br> <h2 class="txtportada">PLANEA TU ACTIVIDAD</h2><br>
+                            <div class="row">
+                              <div class="col-md-8 col-sm-8">
+                                   <h3>PREGUNTA</h3><br>
+                                   <div class="row contAudio">
+                                    <div class="col-md-4 col-sm-4" id="divAudioa1"></div>
+                                   <div class="col-md-4 col-sm-4">
+
+                                        <form enctype="multipart/form-data" class="formularioAudioa1">
+                                            <input name="archivo" type="file" id="audio" />
                                             <br/><br/>
-                                            <input type="button" class="añadirvideo" value="Añadir" id="i1" onclick="subirImagen(this)"/>
-                                            <br />
-                                        </form>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4" id="divPrg">
-                                        <div class="imagenesResp" id="divi2"></div>
-                                        <form enctype="multipart/form-data" class="formularioImagenesi2">
-                                            <input name="archivo" type="file" id="imagen" />
-                                            <br/><br/>
-                                            <input type="button" class="añadirvideo" value="Añadir" id="i2" onclick="subirImagen(this)"/>
-                                            <br />
-                                        </form>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4" id="divPrg">   
-                                        <div class="imagenesResp" id="divi3"></div>
-                                        <form enctype="multipart/form-data" class="formularioImagenesi3">
-                                            <input name="archivo" type="file" id="imagen" />
-                                            <br/><br/>
-                                            <input type="button" class="añadirvideo" value="Añadir" id="i3" onclick="subirImagen(this)"/>
+                                            <input type="button" class="añadirvideo" value="añadir" id="a1" onclick="subirAudio(this)"/>
                                             <br />
                                         </form>
                                    </div>
-                                   </div><br>
+                                   </div>
+
                                </div>
-                             </div>
-                            </div><br>
-                            <div class="col-md-12" id="divRespuesta"><br>
-                                <h4>Respuesta</h4>
-                                <input class="respuesta" type="text" placeholder="1-3">
+                               <div class="col-md-4 col-sm-4" id="divRespuesta">
+                                        <h3>RESPUESTA</h3>
+                                        <input class="respuesta" type="text" placeholder="1-3">
+                                </div>
+                                <div class="col-md-12">
+                                   <h3>OPCIONES</h3>
+                                    <div class="row contPrg">
+
+                                        <div class="col-md-4 col-sm-4" id="divPrg">
+                                            <div class="fondoImg" id="divi1"></div>
+                                            <form enctype="multipart/form-data" class="formularioImagenesi1">
+                                                <input name="archivo" type="file" id="imagen" />
+                                                <br/><br/>
+                                                <input type="button" class="añadirvideo" value="añadir" id="i1" onclick="subirImagen(this)"/>
+                                                <br />
+                                            </form>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4" id="divPrg">
+                                            <div class="fondoImg" id="divi2"></div>
+                                            <form enctype="multipart/form-data" class="formularioImagenesi2">
+                                                <input name="archivo" type="file" id="imagen" />
+                                                <br/><br/>
+                                                <input type="button" class="añadirvideo" value="añadir" id="i2" onclick="subirImagen(this)"/>
+                                                <br />
+                                            </form>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4" id="divPrg">   
+                                            <div class="fondoImg" id="divi3"></div>
+                                            <form enctype="multipart/form-data" class="formularioImagenesi3">
+                                                <input name="archivo" type="file" id="imagen" />
+                                                <br/><br/>
+                                                <input type="button" class="añadirvideo" value="añadir" id="i3" onclick="subirImagen(this)"/>
+                                                <br />
+                                            </form>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
-                         </div>
-                   </div>  
-            </div>
-           
-            <div class="col-md-12 col-sm-12"><br><br>
-            <button id="guardarEx">Guardar</button><br>
-            <button id="nuevoVideo">+</button>
-            </div>
-    </div>   
-</div>      
+
+                    </div>
+                </div>
+            
+            <div class="divNV"><button id="nuevoVideo">+</button></div>
+            <br>
+            
+         </div>      
         
         <!-- footer Start -->
         <footer>
             <div class="row">
               <div class="col-md-12">
-            <p>©Todos los derechos reservados.Gaibor-Chalen-Tohabanda 2018</p>
+                <p>©Todos los derechos reservados.Gaibor-Chalen-Tohabanda 2018</p>
               </div>
             </div>
         </footer>        
            
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+          
         <script src="../js/script.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/bootstrap.min.js"></script>

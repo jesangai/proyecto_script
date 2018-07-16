@@ -9,39 +9,53 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body onload="recibirExcursion()">
-
-<div class="container">
-  <div class="jumbotron">
-      <div class="col-md-6 col-sm-6">
-       <a href="../index.html">
-       <img id="imgLogo" src="../images/logo1.png" alt="Logo">
-       </a>
-      </div>     
-  </div>
- <div class="contenedor">
-        <h1 id="tituloLeer">Título</h1>
-        <h2 id="descripcionLeer">Descripción</h2>
-        <h3 id="creditosLeer">Créditos</h3>
-        <div>
-          <img class="listaimg" id="portadaLeer" alt="" src="">
-        </div>
-        
-        <h1>Pasos</h1>
-        <div id="pasos" class="row"></div>
-        
-        <h1>Actividad</h1><div id="actividades" class="row">
-        </div>
-  </div>
-    </div>
-    
-       <footer>
-            <div class="row">
-              <div class="col-md-12">
-            <p>©Todos los derechos reservados.Gaibor-Chalen-Tohabanda 2018</p>
+    <header>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <a class="navbar-brand" href="../index.html">
+                      <img id="imgLogo" src="../images/logo1.png" alt="Logo">
+                    </a>
+                 </div>
+                 <div class="col-md-6 col-sm-6">
+                    <a class="flecha" href="leerexcursion.html">
+                      <img id="imgLogo" src="../images/flecha.png" alt="Logo">
+                    </a>
+                 </div>
+               </div>
               </div>
+    </header><!-- header close -->
+    <div class="container divExcursion">
+        <div class="recibirPortada row">
+            <div class="col-md-6 col-sm-6">
+                <img class="listaimg" id="portadaLeer" alt="" src="">
             </div>
-        </footer>        
-    
+            <div class="col-md-6 col-sm-6">
+                <h1 id="tituloLeer"></h1>
+                <h2 id="descripcionLeer"></h2>
+                <h3 id="creditosLeer"></h3>
+            </div>
+            
+            
+        </div>
+        
+        <br>
+        <h1>PASOS</h1><br>
+        <div id="recibirPasos" class="row">
+            
+            
+        </div>
+                
+        
+    </div>
+    <div id="divAudiosEx"></div>
+    <footer>
+        <div class="row">
+          <div class="col-md-12">
+            <p>©Todos los derechos reservados.Gaibor-Chalen-Tohabanda 2018</p>
+          </div>
+        </div>
+    </footer>  
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="../js/script.js"></script>
 </body>
