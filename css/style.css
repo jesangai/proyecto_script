@@ -481,7 +481,7 @@ color: tan;
 
 body{overflow-y: auto;}
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 550px) {
     
     #feature {
       padding:100px 22% 100px 22%;
