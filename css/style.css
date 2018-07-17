@@ -31,7 +31,7 @@
 
 .styleAudio{width: 200px}
 .listaimg{width: 350px;}
-.fondoImg{background-color: blueviolet;width: 200px;height: 200px}
+.fondoImg{background-color:aquamarine;width: 200px;height: 200px}
 .imgPregunta{width: 180px;height: 180px}
 .styleVideo{height: 100%}
 #jquery-script-menu {
@@ -438,7 +438,7 @@ color: tan;
 }
 
 #guardarEx{width: 240px;float: right; height: 50px; border-radius: 10px; margin-top: 5px;}
-#guardarEx:hover{background-color: cadetblue; color: white; font-weight: bold}
+#guardarEx:hover{background-color:aquamarine; color:black; font-weight: bold}
 .divCrear{
     margin-top: 200px;
     background-color: #6fa4aa;
