@@ -268,26 +268,27 @@ function listarExcursion(){
 function recibirExcursion(){
     var posExcursion=localStorage.getItem("varPasar");
     //alert(tituloExcursion);
+    console.log();
+    console.log(posExcursion);
     var arrusuarios= [];
    
     $.getJSON('info.json', function(data){
         $.each(data, function(i, resultado){
           arrusuarios.push(new Usuario(resultado))
         });
-        $.each(arrusuarios[posExcursion].excursion, function(i, resExc){
+        console.log(arrusuarios);
            //manejo todoo
             //alert(resExc.titulo);
-            $("#tituloLeer").html(resExc.titulo);
-            $("#descripcionLeer").html(resExc.descripcion);
-            $("#creditosLeer").html(resExc.creditos);
-            $("#portadaLeer").attr("src",resExc.portada);
-            $.each(resExc.pasos, function(i, resPaso){
+            $("#tituloLeer").html(arrusuarios[0].excursion[posExcursion].titulo);
+            $("#descripcionLeer").html(arrusuarios[0].excursion[posExcursion].descripcion);
+            $("#creditosLeer").html(arrusuarios[0].excursion[posExcursion].creditos);
+            $("#portadaLeer").attr("src",arrusuarios[0].excursion[posExcursion].portada);
+            $.each(arrusuarios[0].excursion[posExcursion].pasos, function(i, resPaso){
                 $("#recibirPasos").append("<div class='col-md-12 col-sm-12 videoSolo row'>\
                                             <div class='col-md-4 col-sm-4'><video controls class='listaimg'><source src='"+resPaso.video+"'></video></div>\
                                             <div class='col-md-8 col-sm-8 row'><div class='col-md-12 col-sm-12'><audio controls><source src='"+resPaso.actividad.audio+"' type='audio/mp3' ></audio></div><br/><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img1' src='"+resPaso.actividad.imagen1+"' class='listaimg'></button></div><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img2' src='"+resPaso.actividad.imagen2+"' class='listaimg'></button></div><div class='col-md-4 col-sm-4'><button class='btnOpcion' onclick='validarRespuesta(this,"+resPaso.actividad.respuesta+")'><img id='img3' class='listaimg'src='"+resPaso.actividad.imagen3+"'></button></div></div>");
 
             });
-        });
     });
 }
 
