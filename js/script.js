@@ -84,61 +84,62 @@ class Actividad{
     }
   
 }
- var fileExtensionV;
-$('#video').change(function () {
-    //obtenemos un array con los datos del archivo
-    var file = $("#video")[0].files[0];
-    //obtenemos el nombre del archivo
-    var fileName = file.name;
-    //obtenemos la extensión del archivo
-    fileExtensionV = fileName.substring(fileName.lastIndexOf('.') + 1);
-    //obtenemos el tamaño del archivo
-    var fileSize = file.size;
-    //obtenemos el tipo de archivo image/png ejemplo
-    var fileType = file.type;
-    //mensaje con la información del archivo
-    //showMessageE("<span>Archivo para subir: " + fileName + ", peso total: " + fileSize + " bytes.</span>");
-    //alert(fileExtensionV);
-});
- var fileExtensionP;
-$('#imgPortada').change(function () {
-    //obtenemos un array con los datos del archivo
-    var file = $("#imgPortada")[0].files[0];
-    //obtenemos el nombre del archivo
-    var fileName = file.name;
-    //obtenemos la extensión del archivo
-    fileExtensionP = fileName.substring(fileName.lastIndexOf('.') + 1);
-    //obtenemos el tamaño del archivo
-    var fileSize = file.size;
-    //obtenemos el tipo de archivo image/png ejemplo
-    var fileType = file.type;
-});
-var fileExtensionA;
-$('#audio').change(function () {
-    //obtenemos un array con los datos del archivo
-    var file = $("#audio")[0].files[0];
-    //obtenemos el nombre del archivo
-    var fileName = file.name;
-    //obtenemos la extensión del archivo
-    fileExtensionA = fileName.substring(fileName.lastIndexOf('.') + 1);
-    //obtenemos el tamaño del archivo
-    var fileSize = file.size;
-    //obtenemos el tipo de archivo image/png ejemplo
-    var fileType = file.type;
-});
-var fileExtensionI;
-$('#imagen').change(function () {
-    //obtenemos un array con los datos del archivo
-    var file = $("#imagen")[0].files[0];
-    //obtenemos el nombre del archivo
-    var fileName = file.name;
-    //obtenemos la extensión del archivo
-    fileExtensionI = fileName.substring(fileName.lastIndexOf('.') + 1);
-    //obtenemos el tamaño del archivo
-    var fileSize = file.size;
-    //obtenemos el tipo de archivo image/png ejemplo
-    var fileType = file.type;
-});
+//var fileExtensionV;
+//$('#video').change(function () {
+//    alert(fileExtensionV);
+//    //obtenemos un array con los datos del archivo
+//    var file = $("#video")[0].files[0];
+//    //obtenemos el nombre del archivo
+//    var fileName = file.name;
+//    //obtenemos la extensión del archivo
+//    fileExtensionV = fileName.substring(fileName.lastIndexOf('.') + 1);
+//    //obtenemos el tamaño del archivo
+//    var fileSize = file.size;
+//    //obtenemos el tipo de archivo image/png ejemplo
+//    var fileType = file.type;
+//    //mensaje con la información del archivo
+//    //showMessageE("<span>Archivo para subir: " + fileName + ", peso total: " + fileSize + " bytes.</span>");
+//    
+//});
+// var fileExtensionP;
+//$('#imgPortada').change(function () {
+//    //obtenemos un array con los datos del archivo
+//    var file = $("#imgPortada")[0].files[0];
+//    //obtenemos el nombre del archivo
+//    var fileName = file.name;
+//    //obtenemos la extensión del archivo
+//    fileExtensionP = fileName.substring(fileName.lastIndexOf('.') + 1);
+//    //obtenemos el tamaño del archivo
+//    var fileSize = file.size;
+//    //obtenemos el tipo de archivo image/png ejemplo
+//    var fileType = file.type;
+//});
+//var fileExtensionA;
+//$('#audio').change(function () {
+//    //obtenemos un array con los datos del archivo
+//    var file = $("#audio")[0].files[0];
+//    //obtenemos el nombre del archivo
+//    var fileName = file.name;
+//    //obtenemos la extensión del archivo
+//    fileExtensionA = fileName.substring(fileName.lastIndexOf('.') + 1);
+//    //obtenemos el tamaño del archivo
+//    var fileSize = file.size;
+//    //obtenemos el tipo de archivo image/png ejemplo
+//    var fileType = file.type;
+//});
+//var fileExtensionI;
+//$('#imagen').change(function () {
+//    //obtenemos un array con los datos del archivo
+//    var file = $("#imagen")[0].files[0];
+//    //obtenemos el nombre del archivo
+//    var fileName = file.name;
+//    //obtenemos la extensión del archivo
+//    fileExtensionI = fileName.substring(fileName.lastIndexOf('.') + 1);
+//    //obtenemos el tamaño del archivo
+//    var fileSize = file.size;
+//    //obtenemos el tipo de archivo image/png ejemplo
+//    var fileType = file.type;
+//});
 //var arrVideos=[];
 function subirVideo(btnV){
     var valor= btnV.getAttribute("id");
@@ -152,10 +153,11 @@ function subirVideo(btnV){
         contentType: false,
         processData: false,
         success: function (data) {
-            if (isImage(fileExtensionV)) {
+            //if (isImage(fileExtensionV)) {
                 //$("#di"+valor).html("<img  class='imgPregunta' id='videoExcursion' src='../excursiones/"+data+"'></img>")}
-                $("#di"+valor).html("<video id='videoExcursion' class='styleVideo' control><source src='../excursiones/"+data+"' type='video/mp4'></video>")}
+                $("#di"+valor).html("<video id='videoExcursion' class='styleVideo' control><source src='../excursiones/"+data+"' type='video/mp4'></video>")
         }
+      //  }
     });
 };
 
@@ -172,10 +174,11 @@ function subirAudio(btnA){
         processData: false,
         success: function (data) {
             //alert(data);
-            if (isImage(fileExtensionA)) {
+            //if (isImage(fileExtensionA)) {
                 //alert(valor);
                 //arrVideos.push();
-                $("#divAudio"+valor).html("<audio class='styleAudio' controls><source src='../excursiones/"+data+"' type='audio/mp3' ></audio>")}
+                $("#divAudio"+valor).html("<audio class='styleAudio' controls><source src='../excursiones/"+data+"' type='audio/mp3' ></audio>")
+            //}
         }
     });
 };
@@ -192,10 +195,11 @@ function subirImagen(btnI){
         processData: false,
         success: function (data) {
             //alert(data);
-            if (isImage(fileExtensionI)) {
+         //   if (isImage(fileExtensionI)) {
                 //alert(valor);
                 //arrVideos.push();
-                $("#div"+valor).html("<img class='imgPregunta' src='../excursiones/"+data+"'></img>")}
+                $("#div"+valor).html("<img class='imgPregunta' src='../excursiones/"+data+"'></img>")
+            //}
         }
     });
 };
@@ -218,8 +222,9 @@ $('.añadirPortada').click(function () {
         processData: false,
         success: function (data) {
             
-            if (isImage(fileExtensionP)) {
-                $("#divPortada").html("<img id='portada' src='../excursiones/"+data+"'></img>")}
+            //if (isImage(fileExtensionP)) {
+                $("#divPortada").html("<img id='portada' src='../excursiones/"+data+"'></img>")
+            //}
         },
         //si ha ocurrido un error
         error: function (data) {
@@ -228,26 +233,26 @@ $('.añadirPortada').click(function () {
         }
     });
 });
-function isImage(extension) {
-    switch (extension.toLowerCase()) {
-        case 'jpg':
-        case 'gif':
-        case 'png':
-        case 'jpeg':
-            return true;
-            break;
-        case 'mp3':
-        case 'wav':
-        case 'mp4':
-        case 'm4a':
-        case 'ogg':
-            return true;
-            break;
-        default:
-            return false;
-            break;
-    }
-};
+//function isImage(extension) {
+//    switch (extension.toLowerCase()) {
+//        case 'jpg':
+//        case 'gif':
+//        case 'png':
+//        case 'jpeg':
+//            return true;
+//            break;
+//        case 'mp3':
+//        case 'wav':
+//        case 'mp4':
+//        case 'm4a':
+//        case 'ogg':
+//            return true;
+//            break;
+//        default:
+//            return false;
+//            break;
+//    }
+//};
 
 function listarExcursion(){
     var arrusuarios= [];
@@ -260,7 +265,7 @@ function listarExcursion(){
         });
          
         $.each(arrusuarios[0].excursion, function(i, resultusuarios){
-            $("#listexcursion").append("<div class='col-md-4 col-sm-4'><div><button onclick='pasar("+i+")'><img class='listaimg' src='"+resultusuarios.portada+"'/> <h1>"+resultusuarios.titulo+"</h1><p>"+resultusuarios.descripcion+"</p></button></div></div>");
+            $("#listexcursion").append("<div class='col-md-4 col-sm-4'><div><button onclick='pasar("+i+")'><img class='listaimg' src='"+resultusuarios.portada+"'/></button><h1>"+resultusuarios.titulo+"</h1><p>"+resultusuarios.descripcion+"</p><button onclick='pasarEditar("+i+")'>Editar</button><button onclick='pasarEliminar("+i+")'>Eliminar</button></div></div>");
         });
     });
 };
@@ -310,6 +315,37 @@ function validarRespuesta(btn, respuesta){
 function pasar(pos){
     localStorage.setItem("varPasar",pos);
     window.location = "excursion.html";
+}
+function pasarEditar(pos){
+    localStorage.setItem("varPasarEditar",pos);
+    window.location = "editarexcursion.html";
+}
+function pasarEliminar(pos){
+    var arrusuarios= [];
+    
+    $.getJSON('info.json', function(data){
+        $.each(data, function(i, resultado){
+          arrusuarios.push(new Usuario(resultado))
+        });
+        arrusuarios[0].excursion.splice(pos,1);
+        //alert("s");
+//        console.log(arrusuarios[0].excursion[pos]);
+//        console.log(arrusuarios[0]);
+         $.ajax({
+            url: 'guardarJson.php',
+            method: 'post',
+            data: {
+                "identificador": arrusuarios
+            },
+            success: function (data) {
+                //alert(data);
+                //alert("au: "+usuarios.length);
+                window.location.href="../index.php";
+            }
+        });
+        
+     });
+    //
 }
 var cantVideos=1;
 var cantOpciones=3;
@@ -439,6 +475,8 @@ $('#nuevoVideo').click(function () {
                             </div></div>");
         }
         cantOpciones=cantOpciones+3;
+    }else{
+        alert("Llena todos los campos!");
     }
 });
 function validarDatos() {
@@ -508,3 +546,145 @@ function cargarIndex(){
     });
     
 };
+
+function cargarEditar(){
+    var posEditar= localStorage.getItem("varPasarEditar");
+    var arrusuarios= [];
+    console.log(arrusuarios);
+    $.getJSON('info.json', function(data){
+        $.each(data, function(i, resultado){
+          arrusuarios.push(new Usuario(resultado))
+        });
+        console.log(arrusuarios[0].excursion[posEditar].titulo);
+        $("#titulo").attr("value",arrusuarios[0].excursion[posEditar].titulo);
+        $("#descripcion").attr("value",arrusuarios[0].excursion[posEditar].descripcion);
+        $("#creditos").attr("value",arrusuarios[0].excursion[posEditar].creditos);
+        $("#divPortada").html("<img id='portada' src='"+arrusuarios[0].excursion[posEditar].portada+"'></img>");
+        
+        $.each(arrusuarios[0].excursion[posEditar].pasos, function(i, resultado){
+            console.log("llenar");
+            $('#escenas').append("<div class='row crearVI'><div class='col-md-12 col-sm-12'><h2 class='txtportada'>AÑADIR   VIDEO</h2></div><div class='col-md-4 col-sm-4 paso' id='div"+cantVideos+"'><video controls class='listaimg'><source src='"+resultado.video+"'></video></div>\
+                    <div class='col-md-4 col-sm-4'>\
+                    <form enctype='multipart/form-data' class='formularioVideov"+cantVideos+"'>\
+                        <input name='archivo' type='file' id='video'/>\
+                        <br/><br/>\
+                        <input type='button' class='añadirvideo' value='añadir'  id='v"+cantVideos+"' onclick='subirVideo(this)'/><br/>\
+                    </form>\
+                    </div>\
+                    <div class='col-md-12 col-md-offset-12'><br><br>\
+                <h2 class='txtportada'>PLANEA TU ACTIVIDAD</h2>\
+                <div class='row'>\
+                  <div class='col-md-8 col-sm-8'>\
+                   <h3>PREGUNTA</h3><br>\
+                   <div class='row contAudio'>\
+                    <div class='col-md-4 col-sm-4' id='divAudioa"+cantVideos+"'><audio controls><source src='"+resultado.actividad.audio+"' type='audio/wav'></audio></div>\
+                   <div class='col-md-4 col-sm-4'>\
+                        <form enctype='multipart/form-data' class='formularioAudioa"+cantVideos+"'>\
+                            <input name='archivo' type='file' id='audio' />\
+                            <br/><br/>\
+                            <input type='button' class='añadirvideo' value='añadir' id='a"+cantVideos+"' onclick='subirAudio(this)'/>\
+                            <br />\
+                        </form>\
+                   </div>\
+                   </div></div>\
+                    <div class='col-md-4 col-sm-4' id='divRespuesta'>\
+                        <h3>RESPUESTA</h3>\
+                        <input class='respuesta' type='text' placeholder='1-3' value='"+resultado.actividad.respuesta+"'>\
+                    </div>\
+                    <div class='col-md-12'>\
+                       <h3>OPCIONES</h3>\
+                        <div class='row contPrg'>\
+                            <div class='col-md-4 col-sm-4' id='divPrg'>\
+                                <div class='fondoImg' id='divi"+(cantOpciones+1)+"'><img class='imgPregunta' src='"+resultado.actividad.imagen1+"'></img></div>\
+                                <form enctype='multipart/form-data' class='formularioImagenesi"+(cantOpciones+1)+"'>\
+                                    <input name='archivo' type='file' id='imagen' />\
+                                    <br/><br/>\
+                                    <input type='button' class='añadirvideo' value='añadir' id='i"+(cantOpciones+1)+"' onclick='subirImagen(this)'/>\
+                                    <br/>\
+                                </form>\
+                            </div>\
+                            <div class='col-md-4 col-sm-4' id='divPrg'>\
+                                <div class='fondoImg' id='divi"+(cantOpciones+2)+"'><img class='imgPregunta' src='"+resultado.actividad.imagen2+"'></img></div>\
+                                <form enctype='multipart/form-data' class='formularioImagenesi"+(cantOpciones+2)+"'>\
+                                    <input name='archivo' type='file' id='imagen' />\
+                                    <br/><br/>\
+                                    <input type='button' class='añadirvideo' value='añadir' id='i"+(cantOpciones+2)+"' onclick='subirImagen(this)'/>\
+                                    <br/>\
+                                </form>\
+                            </div>\
+                            <div class='col-md-4 col-sm-4' id='divPrg'>\
+                                <div class='fondoImg' id='divi"+(cantOpciones+3)+"'><img class='imgPregunta' src='"+resultado.actividad.imagen3+"'></img></div>\
+                                <form enctype='multipart/form-data' class='formularioImagenesi"+(cantOpciones+3)+"'>\
+                                    <input name='archivo' type='file' id='imagen' />\
+                                    <br/><br/>\
+                                    <input type='button' class='añadirvideo' value='añadir' id='i"+(cantOpciones+3)+"' onclick='subirImagen(this)'/>\
+                                    <br/>\
+                                </form>\
+                            </div>\
+                            </div>\
+                        </div>\
+                    </div>\
+                    </div></div>");
+            cantVideos++;
+        });
+        
+     });
+}
+
+$('#editarEx').click(function () {
+    var posEditar= localStorage.getItem("varPasarEditar");
+    var arrusuarios= [];
+    
+    $.getJSON('info.json', function(data){
+        $.each(data, function(i, resultado){
+          arrusuarios.push(new Usuario(resultado))
+        });
+        //console.log(video=$('#escenas').children()[0].childNodes[3].firstChild.firstChild);
+        //console.log($('#escenas').children()[0].children[1].firstChild.firstChild.getAttribute("src"));
+        //alert(video);
+        var errores=validarDatos();
+        if(errores==0){
+            var pasos=[];
+            var cantOpciones=0;
+            $.each($('.contAudio'), function(i, resAudio){
+                //alert(i);
+                  var actTmp= new Actividad();
+                  var audio=resAudio.firstElementChild.firstChild.firstChild.getAttribute("src");
+                  var img1=$('.contPrg').children()[cantOpciones].firstElementChild.firstChild.getAttribute("src");
+                  var img2=$('.contPrg').children()[cantOpciones+1].firstElementChild.firstChild.getAttribute("src");
+                  var img3=$('.contPrg').children()[cantOpciones+2].firstElementChild.firstChild.getAttribute("src");
+                  cantOpciones=cantOpciones+3;
+                  var res= $('.respuesta')[i].value;
+                  actTmp.llenarattractividad(audio,img1,img2,img3,res);
+                  //console.log($('#escenas').childNodes);
+                  console.log($('#escenas').children());
+                  var video=$('#escenas').children()[i].children[1].firstChild.firstChild.getAttribute("src");
+                  
+                  var paso=new Pasos();
+                  paso.llenarattrpasos(video,actTmp);
+                  pasos.push(paso);
+                  
+            });
+            var excursion= new Excursion();
+            excursion.llenarattr($("#titulo").val(),$("#descripcion").val(),$("#creditos").val(),$("#portada").attr('src'),pasos);
+            
+            arrusuarios[0].excursion[posEditar]=excursion;
+            console.log(arrusuarios);
+            $.ajax({
+                url: 'guardarJson.php',
+                method: 'post',
+                data: {
+                    "identificador": arrusuarios
+                },
+                success: function (data) {
+                    alert("Se editó la excursión!");
+                    //alert("au: "+usuarios.length);
+                    window.location.href="../index.php";
+                }
+            });
+        }else{
+            alert("Llene todos los campos!");
+        }
+        //window.location.href
+        });
+});
